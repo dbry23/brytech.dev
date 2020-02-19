@@ -1,0 +1,11 @@
+state: enabled
+email: dave@brytech.dev
+fullname: 'Dave Bry'
+title: 'Head Geek'
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$yxT8GXxFTB/7w.5hA4wP1ugJprSLlUONCBIFHX0OLVSfQeYQZOkM2
