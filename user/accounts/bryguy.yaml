@@ -4,8 +4,14 @@ fullname: 'Dave Bry'
 title: 'Head Geek'
 access:
   admin:
-    login: true
-    super: true
+    super: 'true'
+    login: 'true'
   site:
-    login: true
-hashed_password: $2y$10$yxT8GXxFTB/7w.5hA4wP1ugJprSLlUONCBIFHX0OLVSfQeYQZOkM2
+    login: 'true'
+hashed_password: $2y$10$rlSvfms0ylEUsT0CDdQwAOQaMZocG0mqJTJcsTjAz9XsyA98T.jOe
+language: en
+twofa_enabled: false
+twofa_secret: EUUMFL2VHJIIONH62U532B4N6J5UDCFS
+avatar: {  }
+info: null
+groups: null
