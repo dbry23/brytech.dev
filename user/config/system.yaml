@@ -24,7 +24,7 @@ home:
   alias: /home
   hide_in_urls: false
 pages:
-  theme: introspect
+  theme: brytech
   order:
     by: default
     dir: asc

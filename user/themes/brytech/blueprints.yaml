@@ -1,0 +1,9 @@
+name: BryTech
+version: 1.0.1
+description: "Extending Introspect: A responsive theme from templated.co, ported to Grav."
+icon: desktop
+author:
+  name: Dave Bry
+
+form:
+  validation: loose
