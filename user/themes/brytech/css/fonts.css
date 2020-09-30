@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 300;
@@ -21,4 +21,12 @@
   font-style: normal;
   font-weight: 400;
   src: local('Pacifico Regular'), local('Pacifico-Regular'), url('../fonts/Pacifico/Pacifico-Regular.ttf') format('truetype');
+} */
+
+@font-face {
+  font-family: 'Bree';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: local('BreeSerif Regular'), local('Bree Serif Regular'), local('BreeSerif-Regular'), local('Bree-Serif-Regular'), url('../fonts/BreeSerif/BreeSerif-Regular.ttf') format('truetype');
 }

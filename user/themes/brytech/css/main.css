@@ -3128,7 +3128,7 @@
 			}
 
 		#header .logo {
-			font-family: 'Pacifico', cursive;
+			font-family: 'Bree';
 			display: inline-block;
 			height: inherit;
 			left: 0;
@@ -3138,7 +3138,7 @@
 			position: absolute;
 			top: 0;
 			color: #e5474b;
-			font-size: 1.75em;
+			font-size: 2em;
 			text-transform: none;
 			font-weight: normal;
 			padding: 0;
