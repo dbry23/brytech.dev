@@ -1,18 +1,41 @@
-{% for page in pages.children.visible %}
-  <a href="{{ page.url }}">
-    {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"></i>{% endif %}
-    {{ page.menu }}
-  </a>
-{% endfor %}
-{% for mitem in site.menu %}
-  <a href="{{ mitem.url }}">
-      {% if mitem.icon %}<i class="fa fa-{{ mitem.icon }}"></i>{% endif %}
-      {{ mitem.text }}
-  </a>
-{% endfor %}
-{% if config.plugins.login.enabled and grav.user.username %}
-  <a class="logout" href="{{ uri.addNonce((base_url_relative ~ uri.path)|trim('/') ~ '/task' ~ config.system.param_sep ~ 'login.logout', 'logout-form', 'logout-nonce')|e }}">
-      <i class="fa fa-lock"></i>
-      {{ grav.user.fullname ?: grav.user.username }} {{ 'PLUGIN_LOGIN.BTN_LOGOUT'|t }}
-  </a>
-{% endif %}
+<nav id="nav-wrap">
+    <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+    <a class="mobile-btn" href="#close" title="Hide navigation">Hide navigation</a>
+
+    {% set show_onpage_menu = header.onpage_menu == true or header.onpage_menu is null %}
+    {% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_'}) }}{% endmacro %}
+
+    <ul id="nav" class="nav">
+        {% for page in pages.children %}
+            {% if page.visible %}
+                {% set current_page = (page.active or page.activeChild) ? 'current' : '' %}
+                {% if 'home' in page.menu %}
+                <li class="current">
+                    <a class="smoothscroll" href="#home">
+                        {{ page.menu }}
+                    </a>
+                </li>
+                {% else %}
+                <li class="{{ current_page }}">
+                    <a href="{{ page.url }}">
+                        {{ page.menu }}
+                    </a>
+                </li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        {% for mitem in site.menu %}
+            <li>
+                <a href="{{ mitem.link }}">{{ mitem.text }}</a>
+            </li>
+        {% endfor %}
+        {% for module in page.collection() %}
+            {% if not module.header.hidemenu %}
+                {% set current_page = (module.active or module.activeChild) ? 'current' : '' %}
+                <li class="{{ current_module }}">
+                    <a class="smoothscroll" href="#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>

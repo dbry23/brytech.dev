@@ -1,7 +1,17 @@
-<section id="footer">
-  <div class="inner">
-    <div class="copyright">
-      &copy; {{ site.author.copyright }}
+<footer>
+    <div class="row">
+        <div class="twelve columns">
+            <ul class="social-links">
+                {% for item in site.social %}
+                <li><a href="{{ item.url }}"><i class="fa fa-{{ item.icon }}"></i></a></li>
+                {% endfor %}
+            </ul>
+            <ul class="copyright">
+                {% for item in site.copyright %}
+                <li>{{ item.line }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
     </div>
-  </div>
-</section>
+</footer>
