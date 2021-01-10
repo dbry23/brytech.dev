@@ -8,16 +8,19 @@
             {{ page.content }}
             <div class="row">
                 <div class="columns contact-details">
-                    {% if page.header.address %}
+                    {% if page.header.address or page.header.contactemail or page.header.contactphone %}
                     <h2>{{ page.header.title2 }}</h2>
                     {% endif %}
                     <p class="address">
                         {% for item in page.header.address %}
                         {{ item.line }} <br />
                         {% endfor %}
-                        {% for item in page.header.email %}
-                        {{ item.address|safe_email }} <br />
-                        {% endfor %}
+                        {% if page.header.contactemail %}
+                        Email: {{ page.header.contactemail|safe_email }} <br />
+                        {% endif %}
+                        {% if page.header.contactphone %}
+                        Phone: {{ page.header.contactphone }} <br />
+                        {% endif %}
                     </p>
                 </div>
                 {% if page.header.buttons %}
