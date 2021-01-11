@@ -1,6 +1,33 @@
 ---
 title: Resume
 sections:
+    skill:
+        title: 'Skills'
+        css_class: 'skill'
+        items:
+            skills:
+                description: 'With over 14 years of experience, I have worked with a variety of languages, ranging from the .NET ecosystem to web technologies to open-source languages.
+                    <ul>
+                        <li><strong>Languages</strong>: C#, VB, SQL, HTML, CSS, JavaScript, Java, PHP, Twig, PowerShell, Bash</li>
+                        <li><strong>Libraries/Frameworks</strong>: ASP.NET (MVC & Web Forms), LINQ, Entity Framework, jQuery, React, Vue.js</li>
+                        <li><strong>Other</strong>: Visual Studio, Git, GitHub, TeamCity, Octopus Deploy, Grunt, npm, TFS, Microsoft SSRS, Microsoft SSIS, Grav</li>
+                </ul>'
+                skills:
+                    csharp:
+                        name: 'C#'
+                        level: 92
+                    html:
+                        name: 'HTML'
+                        level: 85
+                    js:
+                        name: 'JavaScript'
+                        level: 85
+                    css:
+                        name: 'CSS'
+                        level: 80
+                    sql:
+                        name: 'SQL'
+                        level: 80
     work:
         title: 'Work'
         css_class: 'work'
