@@ -17,6 +17,6 @@ redirects: null
 routes: null
 blog:
   route: /blog
-header: 
-  title: 'BryTech'
-  description: 'IT Solutions Creator'
+# header: 
+#   title: 'BryTech'
+#   description: 'IT Solutions Creator'
