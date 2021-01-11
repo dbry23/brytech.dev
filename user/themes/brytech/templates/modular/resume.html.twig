@@ -11,8 +11,14 @@
                     {% if item.title %}
                     <h3>{{ item.title }}</h3>
                     {% endif %}
-                    {% if item.info or item.date %}
-                    <p class="info">{{ item.info }} <span>&bull;</span> <em class="date">{{ item.date }}</em></p>
+                    {% if item.info %}
+                    <p class="info">{{ item.info }}
+                        {% if item.info and item.date %}
+                        <span>&bull;</span>
+                        {% endif %}
+                    {% endif %}
+                    {% if item.date %}    
+                    <em class="date">{{ item.date }}</em></p>
                     {% endif %}
                     <p>
                         {{ item.description }}
