@@ -18,6 +18,6 @@ redirects: null
 routes: null
 blog:
   route: /blog
-# header: 
-#   title: 'BryTech'
-#   description: 'IT Solutions Creator'
+copyright: 
+  copy: 
+    line: "&copy; Dave Bry 2021"
