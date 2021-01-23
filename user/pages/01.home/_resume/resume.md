@@ -63,7 +63,7 @@ sections:
                         <ul><li><a href="https://www.trafficsafetystore.com/safety-vests">www.trafficsafetystore.com/safety-vests</a></li></ul></li>
                     <li>Created new admin interface achieving goals of unified login across allsites, better visibility into e-commerce & phone orders, and toggling on-sale/out-of-stock quickly for multiple products.</li>
                     <li>Sites: <a href="https://www.trafficsafetystore.com">trafficsafetystore.com</a>, <a href="https://parkingblock.com">parkingblock.com</a>, <a href="https://www.trafficcones.com">trafficcones.com</a>, <a href="https://www.airportsafetystore.com">airportsafetystore.com</a></li>
-                    <li>Tech: ASP.NET (C# MVC), React, jQuery, HTML/CSS/JS, MS SQL Server, SSRS,Elasticsearch, Cloudinary</li>
+                    <li>Tech: ASP.NET (C# MVC), React, jQuery, HTML/CSS/JS, MS SQL Server, SSRS, Elasticsearch, Cloudinary</li>
                 </ul>'
             dechert:
                 title: 'Dechert LLP (Litigation & Transactional Law)'
