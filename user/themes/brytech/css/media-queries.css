@@ -219,7 +219,7 @@
 
    /* About Section
    -------------------------------------------------------------------- */
-   #about { padding-top: 40px; }
+   #about { padding-top: 40px; padding-bottom: 10px; }
    #about .profile-pic { display: block; margin: 0 auto 10px; }
    #about .download .button {
       width: 100%;
@@ -231,6 +231,7 @@
 
    /* Resume Section
    --------------------------------------------------------------------- */
+   #resume { padding-top: 40px; padding-bottom: 0; }
    #resume .header-col {
       padding-top: 0;
       margin-bottom: 48px;
@@ -259,6 +260,7 @@
 
    /* Portfolio Section
    /* ----------------------------------------------------------------- */
+   #portfolio { padding-top: 40px; padding-bottom: 20px; }
    #portfolio-wrapper .columns { margin-bottom: 40px; }
    .popup-modal {	max-width: 85%; }
 
