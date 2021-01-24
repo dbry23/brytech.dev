@@ -20,4 +20,4 @@ blog:
   route: /blog
 copyright: 
   copy: 
-    line: "&copy; Dave Bry 2021"
+    line: '&copy; Dave Bry 2021'
