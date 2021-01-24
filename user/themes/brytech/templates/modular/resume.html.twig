@@ -28,7 +28,17 @@
                     <div class="bars">
                         <ul class="skills">
                             {% for skill in item.skills %}
-                            <li><span class="bar-expand" style="width: {{ skill.level }}%;animation: {{ skill.name|lower }} 2s ease;"></span><em>{{ skill.name }}</em></li>
+                            <li><span class="bar-expand" style="width: {{ skill.level }}%;animation: {{ (skill.anim) ? skill.anim|lower : skill.name|lower }} {{ (skill.level >= 90) ? '3.2s' : (skill.level >= 85) ? '3s' : '2.8s' }} ease;"></span><em>{{ skill.name }}</em></li>
+                            <style>
+                                @-moz-keyframes {{ (skill.anim) ? skill.anim|lower : skill.name|lower }} {
+                                    0%   { width: 0; }
+                                    100% { width: {{ skill.level }}%; }
+                                }
+                                @-webkit-keyframes {{ (skill.anim) ? skill.anim|lower : skill.name|lower }} {
+                                    0%   { width: 0; }
+                                    100% { width: {{ skill.level }}%; }
+                                }
+                            </style>
                             {% endfor %}
                         </ul>
                     </div>

@@ -15,6 +15,7 @@ sections:
                 skills:
                     csharp:
                         name: 'C#'
+                        anim: 'csharp'
                         level: 92
                     html:
                         name: 'HTML'
