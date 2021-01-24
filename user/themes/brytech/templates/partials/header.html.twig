@@ -6,8 +6,8 @@
     <div class="banner-text">
       <h1 class="responsive-headline">{{ site.header_title }}</h1>
       <h3>{{ site.header.description }}</h3>
-      <hr />
       {% if site.social %}
+      <hr />
       <ul class="social">
         {% for item in site.social %}
         <li><a href="{{ item.url }}"><i class="fa fa-{{ item.icon }}"></i></a></li>
