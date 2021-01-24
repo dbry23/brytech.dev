@@ -130,6 +130,6 @@ sections:
                 title: 'High Technology High School'
                 info: 'Web Development & Programming Track'
                 date: '2002'
-                description: '<ul><li>School named a "Star School" by NJ Department of Education, recipient of National Blue Ribbon Award, and consistentlyranked within the top 20 high schools of New Jersey &US by many news organizations.</li></ul>'
+                description: '<ul><li>School named a "Star School" by NJ Department of Education, recipient of National Blue Ribbon Award, and consistently ranked within the top 20 high schools of New Jersey & US by many news organizations.</li></ul>'
 ---
 
