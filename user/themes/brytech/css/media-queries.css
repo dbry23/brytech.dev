@@ -13,11 +13,11 @@
 
     /* header styles
    ------------------------------------------------------------------ */
-   header .banner-text h1 {
+   /* header .banner-text h1 {
       font: 80px/1.1em 'opensans-bold', sans-serif;
       letter-spacing: -1px;
       margin: 0 auto 12px auto;
-   }
+   } */
 
 }
 
@@ -28,10 +28,10 @@
     /* header styles
    ------------------------------------------------------------------ */
    header .banner { padding-bottom: 12px; }
-   header .banner-text h1 {
+   /* header .banner-text h1 {
       font: 78px/1.1em 'opensans-bold', sans-serif;
       letter-spacing: -1px;      
-   }
+   } */
    header .banner-text h3 {
       font: 17px/1.9em 'librebaskerville-regular', serif;
       width: 80%;
@@ -187,11 +187,15 @@
 
    /* Header Styles
    -------------------------------------------------------------------- */
+   header {
+      min-height: unset;
+      max-height: 250px;
+   }
    header .banner {
       padding-bottom: 12px;
       padding-top: 6px;
    }
-   header .banner-text h1 { font: 68px/1.1em 'opensans-bold', sans-serif; }
+   /* header .banner-text h1 { font: 68px/1.1em 'opensans-bold', sans-serif; } */
    header .banner-text h3 {
       font: 16px/1.9em 'librebaskerville-regular', serif;
       width: 85%;
@@ -215,7 +219,8 @@
 
    /* About Section
    -------------------------------------------------------------------- */
-   #about .profile-pic { display: none; }
+   #about { padding-top: 40px; }
+   #about .profile-pic { display: block; margin: 0 auto 10px; }
    #about .download .button {
       width: 100%;
       text-align: center;
@@ -338,6 +343,13 @@
 
 }
 
+/* @media only screen and (max-width: 679px) {
+   header {
+      min-height: 350px !important;
+      height: unset !important;
+   }
+} */
+
 /* mobile narrow
   -------------------------------------------------------------------------- */
 
@@ -349,11 +361,12 @@
 
    /* header styles
    -------------------------------------------------------------------- */
+   /* header { min-height: 320px !important;} */
    header .banner { padding-top: 24px; }
-   header .banner-text h1 {
+   /* header .banner-text h1 {
       font: 40px/1.1em 'opensans-bold', sans-serif;      
       margin: 0 auto 24px auto;
-   }
+   } */
    header .banner-text h3 {
       font: 14px/1.9em 'librebaskerville-regular', sans-serif;
       width: 90%;
@@ -371,12 +384,3 @@
    footer .social-links li { margin-left: 14px; }   
 
 }
-
-
-
-
-
-
-
-
-
