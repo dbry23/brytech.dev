@@ -261,6 +261,7 @@
    /* Portfolio Section
    /* ----------------------------------------------------------------- */
    #portfolio { padding-top: 40px; padding-bottom: 20px; }
+   #portfolio h1 { font-size: 24px; }
    #portfolio-wrapper .columns { margin-bottom: 40px; }
    .popup-modal {	max-width: 85%; }
 
