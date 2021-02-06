@@ -33,11 +33,17 @@ header {
    height: 800px;
    min-height: 500px;
    width: 100%;
-   background: #161415 url(../images/header-background.png) no-repeat top center;
+   background: #161415 no-repeat top center;
    background-size: cover !important;
 	-webkit-background-size: cover !important;
    text-align: center;
    overflow: hidden;
+
+   opacity: 0;
+   -moz-transition: opacity 2.5s ease 1s;
+   -webkit-transition: opacity 2.5s ease 1s;
+   -ms-transition: opacity 2.5s ease 1s;
+   transition: opacity 2.5s ease 1s;
 }
 
 /* vertically center banner section */

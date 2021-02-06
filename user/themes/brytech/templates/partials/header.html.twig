@@ -20,3 +20,19 @@
     <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
   </p>
 </header>
+<script>
+    let w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    let h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    let imgUrl = "//res.cloudinary.com/brytech/image/upload/f_auto,h_auto,w_auto,c_fill/v1/brytech_dev/themes/brytech/images/header-background.png";
+
+    imgUrl = w > 0 ? imgUrl.replace("w_auto", "w_" + w) : imgUrl;
+    if (w <= 767) {
+      imgUrl = imgUrl.replace("h_auto", "h_250");
+    } else {
+      imgUrl = h > 0 ? imgUrl.replace("h_auto", "h_" + h) : imgUrl;
+    }
+
+    let home = document.getElementById("home");
+    home.style.backgroundImage = "url(" + imgUrl + ")";
+    home.style.opacity = 1;
+</script>
