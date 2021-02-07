@@ -11,21 +11,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link rel="icon" type="image/gif" href="{{ url('theme://images/favicon.gif') }}" />
 
-         {% block stylesheets %}
-                {% do assets.addCss('theme://css/default.css') %}
-                {% do assets.addCss('theme://css/layout.css') %}
-                {% do assets.addCss('theme://css/media-queries.css') %}
-                {% do assets.addCss('theme://css/magnific-popup.css') %}
-        {% endblock %}
-
         <script src="{{ url('theme://js/modernizr.js') }}" async="async"></script>
         <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js" async="async"></script>
         <script>var LazyLoad; //initialize var so we can test if script doesn't load</script>
 
-        {% block assets deferred %}
-            {{ assets.css()|raw }}
-        {% endblock %}
-        {% endblock head%}
     </head>
     <body>
         {% block header %}
@@ -53,6 +42,18 @@
             {{ assets.js()|raw }}
             {{ assets.js('bottom')|raw }}
         {% endblock %}
+
+        {% block stylesheets %}
+            {% do assets.addCss('theme://css/default.css') %}
+            {% do assets.addCss('theme://css/layout.css') %}
+            {% do assets.addCss('theme://css/media-queries.css') %}
+            {% do assets.addCss('theme://css/magnific-popup.css') %}
+        {% endblock %}
+
+        {% block assets deferred %}
+            {{ assets.css()|raw }}
+        {% endblock %}
+        {% endblock head%}
 
         <script>
             if (LazyLoad !== undefined) {
