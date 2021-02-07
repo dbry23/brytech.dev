@@ -10,7 +10,11 @@
                     <div class="item-wrap">
                         <a href="#modal-{{ loop.index }}" title="">
                             {% set imgUrl = page.media[item.img_low].url ? page.media[item.img_low].url : page.media[item.img].url %}
-                            {% set imgUrl = imgUrl|replace({"/brytech.dev/user": cloudinary_url ~ "brytech_dev"}) %}
+                            {% if imgUrl starts with "/brytech.dev/user" %}
+                                {% set imgUrl = imgUrl|replace({"/brytech.dev/user": cloudinary_url ~ "brytech_dev"}) %}
+                            {% elseif imgUrl starts with "/user" %}
+                                {% set imgUrl = imgUrl|replace({"/user": cloudinary_url ~ "brytech_dev"}) %}
+                            {% endif %}
                             <img data-src="{{ imgUrl }}" alt="{{ item.title }}" class="lazy" />
                             <div class="overlay">
                                 <div class="portfolio-item-meta">
@@ -27,7 +31,12 @@
         </div>
         {% for item in page.header.portfolio %}
         <div id="modal-{{ loop.index }}" class="popup-modal mfp-hide">
-            {% set imgUrl = page.media[item.img].url|replace({"/brytech.dev/user": cloudinary_url ~ "brytech_dev"}) %}
+            {% set imgUrl = page.media[item.img].url %}
+            {% if imgUrl starts with "/brytech.dev/user" %}
+                {% set imgUrl = imgUrl|replace({"/brytech.dev/user": cloudinary_url ~ "brytech_dev"}) %}
+            {% elseif imgUrl starts with "/user" %}
+                {% set imgUrl = imgUrl|replace({"/user": cloudinary_url ~ "brytech_dev"}) %}
+            {% endif %}
             <img class="scale-with-grid lazy" data-src="{{ imgUrl }}" />
             <div class="description-box">
                 <h4>{{ item.title }}</h4>
