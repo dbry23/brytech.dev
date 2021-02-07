@@ -1,3 +1,5 @@
+{% set cloudinary_url = "//res.cloudinary.com/brytech/image/upload/f_auto,q_auto/" %}
+
 <section id="portfolio">
     <div class="row">
         <div class="twelve columns collapsed">
@@ -8,6 +10,7 @@
                     <div class="item-wrap">
                         <a href="#modal-{{ loop.index }}" title="">
                             {% set imgUrl = page.media[item.img_low].url ? page.media[item.img_low].url : page.media[item.img].url %}
+                            {% set imgUrl = imgUrl|replace({"/brytech.dev/user": cloudinary_url ~ "brytech_dev"}) %}
                             <img src="{{ imgUrl }}" alt="{{ item.title }}" />
                             <div class="overlay">
                                 <div class="portfolio-item-meta">
@@ -24,7 +27,8 @@
         </div>
         {% for item in page.header.portfolio %}
         <div id="modal-{{ loop.index }}" class="popup-modal mfp-hide">
-            <img class="scale-with-grid" src="{{ page.media[item.img].url }}" alt="" />
+            {% set imgUrl = page.media[item.img].url|replace({"/brytech.dev/user": cloudinary_url ~ "brytech_dev"}) %}
+            <img class="scale-with-grid" src="{{ imgUrl }}" />
             <div class="description-box">
                 <h4>{{ item.title }}</h4>
                 <p>{{ item.content }}.</p>
