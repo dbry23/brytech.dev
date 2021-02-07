@@ -21,7 +21,7 @@ echo (shell_exec('cat '.$repo.'/user/themes/brysmarine/css/cssver'));
 
 //clear grav cache
 echo "Clearing Grav cache...\r\n";
-$grav_output = shell_exec('php-7.2 bin/grav cache --all');
+$grav_output = shell_exec('php-7.4 bin/grav cache --all');
 echo $grav_output;
 
 //clear cloudflare cache
