@@ -7,7 +7,8 @@
                 <div class="columns portfolio-item">
                     <div class="item-wrap">
                         <a href="#modal-{{ loop.index }}" title="">
-                            {{ page.media[item.img].html() }}
+                            {% set imgUrl = page.media[item.img_low].url ? page.media[item.img_low].url : page.media[item.img].url %}
+                            <img src="{{ imgUrl }}" alt="{{ item.title }}" />
                             <div class="overlay">
                                 <div class="portfolio-item-meta">
                                     <h5>{{ item.title }}</h5>

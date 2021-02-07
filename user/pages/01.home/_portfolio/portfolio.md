@@ -8,6 +8,7 @@ portfolio:
         content: 'Developed interactive sign designer that shows live preview as customer types and changes font size, color, and positioning. Resulted in more than $36,000 of additional sales in first 6 months.'
         tags: 'ASP.NET (C# MVC), jQuery, HTML/CSS/JS, Cloudinary'
         img: TrafficSafetyStore_Customization.gif
+        img_low: TrafficSafetyStore_Customization_low.gif
         link: 'https://www.trafficsafetystore.com/product/customization?productoptionid=4625'
     brys_marine:
         title: 'Bry''s Marine website'
@@ -22,6 +23,7 @@ portfolio:
         content: 'Doubled sales of vinyl roll-up signs by implementing new stylish interface with built-in search that brings the most relevant signs to the top, and supporting hundreds of different sign legends.'
         tags: 'ASP.NET (C# MVC), React, HTML/CSS/JS, Entity'
         img: TrafficSafetyStore_SignFinder.gif
+        img_low: TrafficSafetyStore_SignFinder_low.gif
         link: 'https://www.trafficsafetystore.com/traffic-signs/roll-up-48'
 ---
 
