@@ -14,11 +14,14 @@
         <link rel="icon" type="image/gif" href="{{ url('theme://images/favicon.gif') }}" />
 
         {% block stylesheets %}
+            {% set cssVer = file_get_contents('theme://css/cssver')|trim %}
+            {% do assets.addInlineCss(file_get_contents('theme://css/critical_min.css'), {'group':'critical'}) %}
             {% do assets.addCss('theme://css/default.css', {'priority': 10, group:'non-crit'}) %}
             {% do assets.addCss('theme://css/layout.css', {'priority': 10, group:'non-crit'}) %}
             {% do assets.addCss('theme://css/media-queries.css', {'priority': 10, group:'non-crit'}) %}
             {% do assets.addCss('theme://css/magnific-popup.css', {'priority': 10, group:'non-crit'}) %}
         {% endblock %}
+        {{ assets.css('critical') }}
 
         <script src="{{ url('theme://js/modernizr.js') }}" async="async"></script>
         <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.0/dist/lazyload.min.js" async="async"></script>
