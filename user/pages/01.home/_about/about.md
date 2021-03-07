@@ -3,9 +3,9 @@ title: About
 title2: 'Contact Details'
 media_order: profilepic.jpg
 contactemail: 'dbry23@gmail.com'
-contactphone: '908.433.0919'
+# contactphone: '908.433.0919'
 buttons:
-    download: 
+    download:
         url: 'https://www.dropbox.com/s/4a6s7dzbwy2wgjt/David%20Bry%20resume.pdf?dl=0'
         text: 'Download Resume'
         icon: 'download'
