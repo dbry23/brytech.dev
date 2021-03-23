@@ -2,7 +2,7 @@
 title: About
 title2: 'Contact Details'
 media_order: profilepic.jpg
-contactemail: 'dbry23@gmail.com'
+# contactemail: 'dbry23@gmail.com'
 # contactphone: '908.433.0919'
 buttons:
     download:
