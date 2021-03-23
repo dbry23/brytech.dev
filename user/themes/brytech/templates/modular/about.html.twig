@@ -7,10 +7,9 @@
         <div class="nine columns main-col">
             {{ page.content }}
             <div class="row">
+                {% if page.header.address or page.header.contactemail or page.header.contactphone %}
                 <div class="columns contact-details">
-                    {% if page.header.address or page.header.contactemail or page.header.contactphone %}
                     <h2>{{ page.header.title2 }}</h2>
-                    {% endif %}
                     <p class="address">
                         {% for item in page.header.address %}
                         {{ item.line }} <br />
@@ -23,6 +22,7 @@
                         {% endif %}
                     </p>
                 </div>
+                {% endif %}
                 {% if page.header.buttons %}
                 <div class="columns download">
                     <p>
