@@ -20,6 +20,8 @@ use Composer\Semver\VersionParser;
 
 
 
+
+
 class InstalledVersions
 {
 private static $installed = array (
@@ -30,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'ba8b91ad2962939c0c16d40adb662eb48acfb918',
+    'reference' => '668f8ccdbff3f0ae1e0a7bfdbf6ea9a5508eb1fd',
     'name' => 'getgrav/grav',
   ),
   'versions' => 
@@ -64,12 +66,12 @@ private static $installed = array (
     ),
     'doctrine/cache' => 
     array (
-      'pretty_version' => '1.10.2',
-      'version' => '1.10.2.0',
+      'pretty_version' => '1.11.0',
+      'version' => '1.11.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '13e3381b25847283a91948d04640543941309727',
+      'reference' => 'a9c1b59eba5a08ca2770a76eddb88922f504e8e0',
     ),
     'doctrine/collections' => 
     array (
@@ -127,12 +129,21 @@ private static $installed = array (
     ),
     'filp/whoops' => 
     array (
-      'pretty_version' => '2.10.0',
-      'version' => '2.10.0.0',
+      'pretty_version' => '2.12.1',
+      'version' => '2.12.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => '6ecda5217bf048088b891f7403b262906be5a957',
+      'reference' => 'c13c0be93cff50f88bbd70827d993026821914dd',
+    ),
+    'getgrav/cache' => 
+    array (
+      'pretty_version' => 'v2.0.0',
+      'version' => '2.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '56fd63f752779928fcd1074ab7d12f406dde8861',
     ),
     'getgrav/grav' => 
     array (
@@ -141,34 +152,25 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'ba8b91ad2962939c0c16d40adb662eb48acfb918',
+      'reference' => '668f8ccdbff3f0ae1e0a7bfdbf6ea9a5508eb1fd',
     ),
-    'gregwar/cache' => 
+    'getgrav/image' => 
     array (
-      'pretty_version' => 'dev-php8',
-      'version' => 'dev-php8',
+      'pretty_version' => 'v3.0.0',
+      'version' => '3.0.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '49ccdf9ae760b009a192bc3c7b417980c8a8cc2e',
-    ),
-    'gregwar/image' => 
-    array (
-      'pretty_version' => 'dev-php8',
-      'version' => 'dev-php8',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'ea23859700f32447a85e79d96f331e3d6c8897a8',
+      'reference' => '02c1bb2c179dd894c4f6610c9c49da364ee7d264',
     ),
     'guzzlehttp/psr7' => 
     array (
-      'pretty_version' => '1.7.0',
-      'version' => '1.7.0.0',
+      'pretty_version' => '1.8.1',
+      'version' => '1.8.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => '53330f47520498c0ae1f61f7e2c90f55690c06a3',
+      'reference' => '35ea11d335fd638b5882ff1725228b3d35496ab1',
     ),
     'itsgoingd/clockwork' => 
     array (
@@ -411,12 +413,12 @@ private static $installed = array (
     ),
     'rockettheme/toolbox' => 
     array (
-      'pretty_version' => '1.5.7',
-      'version' => '1.5.7.0',
+      'pretty_version' => '1.5.9',
+      'version' => '1.5.9.0',
       'aliases' => 
       array (
       ),
-      'reference' => '8d3ebc4d982595d6eac90e851f2b4d5c0cec0399',
+      'reference' => '2d6693235aaca2efaadb61c84dac927aaf4eabfa',
     ),
     'seld/cli-prompt' => 
     array (
@@ -436,12 +438,12 @@ private static $installed = array (
     ),
     'symfony/console' => 
     array (
-      'pretty_version' => 'v4.4.20',
-      'version' => '4.4.20.0',
+      'pretty_version' => 'v4.4.21',
+      'version' => '4.4.21.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'c98349bda966c70d6c08b4cd8658377c94166492',
+      'reference' => '1ba4560dbbb9fcf5ae28b61f71f49c678086cf23',
     ),
     'symfony/contracts' => 
     array (
@@ -477,12 +479,12 @@ private static $installed = array (
     ),
     'symfony/http-client' => 
     array (
-      'pretty_version' => 'v4.4.20',
-      'version' => '4.4.20.0',
+      'pretty_version' => 'v4.4.21',
+      'version' => '4.4.21.0',
       'aliases' => 
       array (
       ),
-      'reference' => '67c5af7489b3c2eea771abd973243f5c58f5fb40',
+      'reference' => '911177e186b82e5b9a9f41c13af53699b6745657',
     ),
     'symfony/http-client-contracts' => 
     array (
@@ -582,21 +584,21 @@ private static $installed = array (
     ),
     'symfony/var-dumper' => 
     array (
-      'pretty_version' => 'v4.4.20',
-      'version' => '4.4.20.0',
+      'pretty_version' => 'v4.4.21',
+      'version' => '4.4.21.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'a1eab2f69906dc83c5ddba4632180260d0ab4f7f',
+      'reference' => '0da0e174f728996f5d5072d6a9f0a42259dbc806',
     ),
     'symfony/yaml' => 
     array (
-      'pretty_version' => 'v4.4.20',
-      'version' => '4.4.20.0',
+      'pretty_version' => 'v4.4.21',
+      'version' => '4.4.21.0',
       'aliases' => 
       array (
       ),
-      'reference' => '29e61305e1c79d25f71060903982ead8f533e267',
+      'reference' => '3871c720871029f008928244e56cf43497da7e9d',
     ),
     'twig/twig' => 
     array (
@@ -633,7 +635,6 @@ $packages = array();
 foreach (self::getInstalled() as $installed) {
 $packages[] = array_keys($installed['versions']);
 }
-
 
 if (1 === \count($packages)) {
 return $packages[0];
@@ -826,6 +827,7 @@ public static function reload($data)
 self::$installed = $data;
 self::$installedByVendor = array();
 }
+
 
 
 

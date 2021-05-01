@@ -1,3 +1,72 @@
+# v1.7.14
+## 04/29/2021
+
+1. [](#new)
+    * Added `MediaUploadTrait::checkFileMetadata()` method
+1. [](#improved)
+    * Updating a theme should always keep the custom files [getgrav/grav-plugin-admin#2135](https://github.com/getgrav/grav-plugin-admin/issues/2135)
+1. [](#bugfix)
+    * Fixed broken numeric language codes in Flex Pages [#3332](https://github.com/getgrav/grav/issues/3332)
+    * Fixed broken `exif_imagetype()` twig function
+
+# v1.7.13
+## 04/23/2021
+
+1. [](#new)
+    * Added support for getting translated collection of Flex Pages using `$collection->withTranslated('de')`
+1. [](#improved)
+    * Moved `gregwar/Image` and `gregwar/Cache` in-house to official `getgrav/Image` and `getgrav/Cache` packagist packages. This will help environments with very strict proxy setups that don't allow VCS setup. [#3289](https://github.com/getgrav/grav/issues/3289)
+    * Improved XSS Invalid Protocol detection regex [#3298](https://github.com/getgrav/grav/issues/3298)
+    * Added support for user provided folder in Flex `$page->copy()`
+1. [](#bugfix)
+    * Fixed `The "Grav/Common/Twig/TwigExtension" extension is not enabled` when using markdown twig tag [#3317](https://github.com/getgrav/grav/issues/3317)
+    * Fixed text field maxlength validation newline issue [#3324](https://github.com/getgrav/grav/issues/3324)
+    * Fixed a bug in Flex Object `refresh()` method
+
+# v1.7.12
+## 04/15/2021
+
+1. [](#improved)
+    * Improve JSON support for the request
+1. [](#bugfix)
+    * Fixed absolute path support for Windows [#3297](https://github.com/getgrav/grav/issues/3297)
+    * Fixed adding tags in admin after upgrading Grav [#3315](https://github.com/getgrav/grav/issues/3315)
+
+# v1.7.11
+## 04/13/2021
+
+1. [](#new)
+    * Added configuration options to allow PHP methods to be used in Twig functions (`system.twig.safe_functions`) and filters (`system.twig.safe_filters`)
+    * Deprecated using PHP methods in Twig without them being in the safe lists
+    * Prevent dangerous PHP methods from being used as Twig functions and filters
+    * Restrict filesystem Twig functions to accept only local filesystem and grav streams
+1. [](#improved)
+    * Better GPM detection of unauthorized installations
+1. [](#bugfix)
+  * **IMPORTANT** Fixed security vulnerability with Twig allowing dangerous PHP functions by default [GHSA-g8r4-p96j-xfxc](https://github.com/getgrav/grav/security/advisories/GHSA-g8r4-p96j-xfxc)
+    * Fixed nxinx appending repeating `?_url=` in some redirects
+    * Fixed deleting page with language code not removing the folder if it was the last language [#3305](https://github.com/getgrav/grav/issues/3305)
+    * Fixed fatal error when using markdown links with `image://` stream [#3285](https://github.com/getgrav/grav/issues/3285)
+    * Fixed `system.languages.session_store_active` not having any effect [#3269](https://github.com/getgrav/grav/issues/3269)
+    * Fixed fatal error if `system.pages.types` is not an array [#2984](https://github.com/getgrav/grav/issues/2984)
+
+# v1.7.10
+## 04/06/2021
+
+1. [](#new)
+    * Added initial support for running Grav library from outside the webroot [#3297](https://github.com/getgrav/grav/issues/3297)
+1. [](#improved)
+    * Improved password handling when saving a user
+1. [](#bugfix)
+    * Ignore errors when using `set_time_limit` in `Archiver` and `GPM\Response` classes [#3023](https://github.com/getgrav/grav/issues/3023)
+    * Fixed `Folder::move()` deleting the folder if you move folder into itself, created empty file instead
+    * Fixed moving `Flex Page` to itself causing the page to be lost [#3227](https://github.com/getgrav/grav/issues/3227)
+    * Fixed `PageStorage` from detecting files as pages
+    * Fixed `UserIndex` not implementing `UserCollectionInterface`
+    * Fixed missing `onAdminAfterDelete` event call in `Flex Pages`
+    * Fixed system templates not getting scanned [#3296](https://github.com/getgrav/grav/issues/3296)
+    * Fixed incorrect routing if url path looks like a domain name [#2184](https://github.com/getgrav/grav/issues/2184)
+
 # v1.7.9
 ## 03/19/2021
 
