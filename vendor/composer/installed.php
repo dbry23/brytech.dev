@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '668f8ccdbff3f0ae1e0a7bfdbf6ea9a5508eb1fd',
+    'reference' => 'ad1cf15d7c7719aa884cef7f2aad245052ebe0c7',
     'name' => 'getgrav/grav',
   ),
   'versions' => 
@@ -126,7 +126,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '668f8ccdbff3f0ae1e0a7bfdbf6ea9a5508eb1fd',
+      'reference' => 'ad1cf15d7c7719aa884cef7f2aad245052ebe0c7',
     ),
     'getgrav/image' => 
     array (

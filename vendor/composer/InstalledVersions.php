@@ -32,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '668f8ccdbff3f0ae1e0a7bfdbf6ea9a5508eb1fd',
+    'reference' => 'ad1cf15d7c7719aa884cef7f2aad245052ebe0c7',
     'name' => 'getgrav/grav',
   ),
   'versions' => 
@@ -152,7 +152,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '668f8ccdbff3f0ae1e0a7bfdbf6ea9a5508eb1fd',
+      'reference' => 'ad1cf15d7c7719aa884cef7f2aad245052ebe0c7',
     ),
     'getgrav/image' => 
     array (
@@ -799,9 +799,23 @@ return $installed[0]['root'];
 
 
 
+
 public static function getRawData()
 {
+@trigger_error('getRawData only returns the first dataset loaded, which may not be what you expect. Use getAllRawData() instead which returns all datasets for all autoloaders present in the process.', E_USER_DEPRECATED);
+
 return self::$installed;
+}
+
+
+
+
+
+
+
+public static function getAllRawData()
+{
+return self::getInstalled();
 }
 
 
