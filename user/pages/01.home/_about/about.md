@@ -13,6 +13,6 @@ buttons:
 
 ## About Me
 
-I am Dave Bry, a technology enthusiast currently living and working in the City of Brotherly Love - Philadelphia, Pennsylvania.
+I am Dave Bry, a technology enthusiast currently living in South Jersey outside of Philadelphia, Pennsylvania.
 
-Working primarily as a .NET developer for over 14 years, I have experience in a variety of industries including e-commerce, legal, commercial mortgage, and retail marine sales. Most recently, I have been writing curriculum material for the aspiring software developers enrolled at [Tech Elevator](https://www.techelevator.com).
+Working primarily as a .NET developer for over 15 years, I have experience in a variety of industries including e-commerce, legal, commercial mortgage, and retail marine sales. Most recently, I have been writing curriculum material for the aspiring software developers enrolled at [Tech Elevator](https://www.techelevator.com).

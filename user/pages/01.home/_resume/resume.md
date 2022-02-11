@@ -6,11 +6,11 @@ sections:
         css_class: 'skill'
         items:
             skills:
-                description: 'With over 14 years of experience, I have worked with a variety of languages, ranging from the .NET ecosystem to web technologies to open-source languages.
+                description: 'With over 15 years of experience, I have worked with a variety of languages, ranging from the .NET ecosystem to web technologies to open-source languages.
                     <ul>
-                        <li><strong>Languages</strong>: C#, VB, SQL, HTML, CSS, JavaScript, Java, PHP, Twig, PowerShell, Bash</li>
+                        <li><strong>Languages</strong>: C#, VB, Java, SQL, HTML, CSS, JavaScript, PHP, Twig, PowerShell, Bash</li>
                         <li><strong>Libraries/Frameworks</strong>: ASP.NET (MVC & Web Forms), LINQ, Entity Framework, jQuery, React, Vue.js</li>
-                        <li><strong>Other</strong>: Visual Studio, Git, GitHub, TeamCity, Octopus Deploy, Grunt, npm, TFS, Microsoft SSRS, Microsoft SSIS, Grav</li>
+                        <li><strong>Other</strong>: Visual Studio, Git, GitHub, GitLab, TeamCity, Octopus Deploy, Grunt, npm, TFS, Microsoft SSRS, Microsoft SSIS, Grav</li>
                 </ul>'
                 skills:
                     csharp:
@@ -29,6 +29,9 @@ sections:
                     sql:
                         name: 'SQL'
                         level: 80
+                    java:
+                        name: 'Java'
+                        level: 70
     work:
         title: 'Work'
         css_class: 'work'
