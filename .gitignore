@@ -6,7 +6,7 @@ assets/*
 logs/*
 images/*
 user/data/*
-backup/* 
+backup/*
 
 # OS Generated
 .DS_Store*
@@ -18,7 +18,6 @@ Thumbs.db
 .gitignore~
 *.*~
 .vs/*
-cssver
 streaming/*
 
 ___github-log.txt

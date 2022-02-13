@@ -14,7 +14,7 @@
         <link rel="icon" type="image/gif" href="{{ url('theme://images/favicon.gif') }}" />
 
         {% block stylesheets %}
-            {% set cssVer = file_get_contents('theme://css/cssver')|trim %}
+            {% set cssVer = site.css_version|trim %}
             {% do assets.addInlineCss(file_get_contents('theme://css/critical_min.css'), {'group':'critical'}) %}
             {% do assets.addCss('theme://css/default.css', {'priority': 10, group:'non-crit'}) %}
             {% do assets.addCss('theme://css/layout.css', {'priority': 10, group:'non-crit'}) %}

@@ -15,9 +15,9 @@ $output[] = "GitHub Pull\n============================\n" . shell_exec('cd '.$re
 file_put_contents(rtrim(getcwd(), '/').'/___github-log.txt', implode("\n", $output) . "\n----------------------------\n", FILE_APPEND);
 
 // //update CSS Version
-// echo "Updating CSS version number...\r\n";
-// shell_exec('date +%s > '.$repo.'/user/themes/brysmarine/css/cssver');
-// echo (shell_exec('cat '.$repo.'/user/themes/brysmarine/css/cssver'));
+// shell_exec('sed -i \'s/css_version: [0-9]*/css_version: \'$(date +%s)\'/\' user/config/site.yaml');
+// on macos:
+// shell_exec('sed -i \'\' \'s/css_version: [0-9]*/css_version: \'$(date +%s)\'/\' user/config/site.yaml');
 
 //clear grav cache
 echo "Clearing Grav cache...\r\n";
