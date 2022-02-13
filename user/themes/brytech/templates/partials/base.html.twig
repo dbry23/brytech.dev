@@ -15,7 +15,7 @@
 
         {% block stylesheets %}
             {% set cssVer = site.css_version|trim %}
-            {% do assets.addInlineCss(file_get_contents('theme://css/critical_min.css'), {'group':'critical'}) %}
+            {% do assets.addCss('theme://css/critical_min.css', {'group':'critical', 'loading':'inline'}) %}
             {% do assets.addCss('theme://css/default.css', {'priority': 10, group:'non-crit'}) %}
             {% do assets.addCss('theme://css/layout.css', {'priority': 10, group:'non-crit'}) %}
             {% do assets.addCss('theme://css/media-queries.css', {'priority': 10, group:'non-crit'}) %}
