@@ -4,7 +4,7 @@ ignore_user_abort(true);
 set_time_limit(0);
 
 $repo          = '~/brytech.dev';
-$branch        = 'master';
+$branch        = 'main';
 $output        = array();
 
 // update github Repo
