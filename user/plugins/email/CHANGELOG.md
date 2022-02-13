@@ -1,3 +1,23 @@
+# v3.1.5
+## 01/03/22
+
+1. [](#improved)
+   * Updated to Swiftmailer `v6.3.0` with PHP 8.1 compatibility [#157](https://github.com/getgrav/grav-plugin-email/issues/157)
+
+# v3.1.4
+## 11/16/2021
+
+1. [](#improved)
+    * Added second parameter to `Email::send()` to get failed recipients
+
+# v3.1.3
+## 07/19/2021
+
+1. [](#improved)
+   * Pass page variable to processed forms [#141](https://github.com/getgrav/grav-plugin-email/pull/141)
+   * Email configuration available to templates [#152](https://github.com/getgrav/grav-plugin-email/pull/152)
+   * New Event after eMail was sent [#151](https://github.com/getgrav/grav-plugin-email/pull/151)
+
 # v3.1.2
 ## 04/06/2021
 

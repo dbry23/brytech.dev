@@ -89,7 +89,7 @@
     {% if allowed and user.authorize('admin.super') %}
     <div class="alert notice">
         {% set save_location = object.getStorageFolder() ?: directory.getStorageFolder() %}
-        {{ "PLUGIN_ADMIN.SAVE_LOCATION"|tu }}: <b>{{ url(save_location, false, true)|trim('/') }} {{ not object.exists ? '[NEW]' }}</b> (type: <b>{{ (form.getValue('name') ?: 'default') }}</b>)
+        {{ "PLUGIN_ADMIN.SAVE_LOCATION"|tu }}: <b>{{ url(save_location, false, true)|trim('/') }} {{ not object.exists ? '[' ~ 'PLUGIN_FLEX_OBJECTS.NEW'|tu|upper ~ ']' }}</b> (type: <b>{{ (form.getValue('name') ?: 'default') }}</b>)
     </div>
     {% endif %}
     {% if object.exists and form.flash.exists %}
@@ -192,7 +192,7 @@
     {% if object.exists %}
         {% set modal_data = data({
             route: '/' ~ object.key,
-            name: object.header.child_type ?? null
+            name: object.header.child_type ?? object.blueprint.child_type ?? 'default'
         }) %}
 
         <div class="remodal" data-remodal-id="modal" data-remodal-options="hashTracking: false, closeOnOutsideClick: false">
