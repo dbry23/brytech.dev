@@ -41,9 +41,11 @@ sections:
                 info: 'Curriculum Developer'
                 date: 'Jan 2020 - Present'
                 description: '<ul>
-                    <li>Wrote and peer reviewed new curriculum material—tutorials, programming exercises, student book content, and instructor lecture notes.</li>
-                    <li>Collaborated with other curriculum developers and instructors on sprint planning, material feedback, and instruction styles.</li>
-                    <li>Tech: Vue.js, HTML, CSS, Markdown, Bitbucket, Asana</li>
+                    <li>Developed new module capstone for students to demonstrate knowledge in client/server web API code and SQL backed storage through DAO classes.</li>
+                    <li>Designed three new database schemas with pre-populated data for students to learn SQL statements, joins, and aggregate functions.</li>
+                    <li>Created technique for automated testing of SQL exercises using unit testing framework and not give away solutions to students.</li>
+                    <li>Produced new and revised current curriculum materials—tutorials, exercises, reading content, quizzes, and instructor lecture notes. Ported content between C# and Java.</li>
+                    <li>Tech: C#, Java, MSTest, JUnit, MS SQL Server, PostgreSQL, Vue.js, HTML/CSS/JS, Markdown</li>
                 </ul>'
             brysmarine:
                 title: 'Bry''s Marine (Marine Sales/Service)'
@@ -52,7 +54,7 @@ sections:
                 description: '<ul>
                     <li>Rebuilt and redesigned website on lightweight CMS with focus on SEO and better user experience.</li>
                     <li> Site: <a href="https://www.brysmarine.com">www.brysmarine.com</a></li>
-                    <li>Tech: Grav CMS, PHP/Twig, jQuery, HTML/CSS/JS, DreamHost, Cloudinary</li>
+                    <li>Tech: Grav CMS, PHP/Twig, Markdown, jQuery, HTML/CSS/JS, DreamHost, Cloudinary</li>
                 </ul>'
             tss:
                 title: 'Traffic Safety Store (Traffic Safety/E-commerce)'
