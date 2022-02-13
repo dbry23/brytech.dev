@@ -3,7 +3,7 @@
 /**
  * @package    Grav\Common\Config
  *
- * @copyright  Copyright (c) 2015 - 2021 Trilby Media, LLC. All rights reserved.
+ * @copyright  Copyright (c) 2015 - 2022 Trilby Media, LLC. All rights reserved.
  * @license    MIT License; see LICENSE file for details.
  */
 
@@ -40,6 +40,9 @@ class Setup extends Data
      * @var string|null Current environment normalized to lower case.
      */
     public static $environment;
+
+    /** @var string */
+    public static $securityFile = 'config://security.yaml';
 
     /** @var array */
     protected $streams = [
@@ -390,12 +393,19 @@ class Setup extends Data
 
             if (!$locator->findResource('environment://config', true)) {
                 // If environment does not have its own directory, remove it from the lookup.
-                $this->set('streams.schemes.environment.prefixes', ['config' => []]);
+                $prefixes = $this->get('streams.schemes.environment.prefixes');
+                $prefixes['config'] = [];
+
+                $this->set('streams.schemes.environment.prefixes', $prefixes);
                 $this->initializeLocator($locator);
             }
 
-            // Create security.yaml if it doesn't exist.
-            $filename = $locator->findResource('config://security.yaml', true, true);
+            // Create security.yaml salt if it doesn't exist into existing configuration environment if possible.
+            $securityFile = Utils::basename(static::$securityFile);
+            $securityFolder = substr(static::$securityFile, 0, -\strlen($securityFile));
+            $securityFolder = $locator->findResource($securityFolder, true) ?: $locator->findResource($securityFolder, true, true);
+            $filename = "{$securityFolder}/{$securityFile}";
+
             $security_file = CompiledYamlFile::instance($filename);
             $security_content = (array)$security_file->content();
 

@@ -147,7 +147,10 @@ trait HttpClientTrait
 
         // Finalize normalization of options
         $options['http_version'] = (string) ($options['http_version'] ?? '') ?: null;
-        $options['timeout'] = (float) ($options['timeout'] ?? ini_get('default_socket_timeout'));
+        if (0 > $options['timeout'] = (float) ($options['timeout'] ?? ini_get('default_socket_timeout'))) {
+            $options['timeout'] = 172800.0; // 2 days
+        }
+
         $options['max_duration'] = isset($options['max_duration']) ? (float) $options['max_duration'] : 0;
 
         return [$url, $options];
@@ -215,7 +218,7 @@ trait HttpClientTrait
             $alternatives = [];
 
             foreach ($defaultOptions as $key => $v) {
-                if (levenshtein($name, $key) <= \strlen($name) / 3 || false !== strpos($key, $name)) {
+                if (levenshtein($name, $key) <= \strlen($name) / 3 || str_contains($key, $name)) {
                     $alternatives[] = $key;
                 }
             }
@@ -456,7 +459,7 @@ trait HttpClientTrait
                 throw new InvalidArgumentException(sprintf('Unsupported IDN "%s", try enabling the "intl" PHP extension or running "composer require symfony/polyfill-intl-idn".', $host));
             }
 
-            $host = \defined('INTL_IDNA_VARIANT_UTS46') ? idn_to_ascii($host, \IDNA_DEFAULT, \INTL_IDNA_VARIANT_UTS46) ?: strtolower($host) : strtolower($host);
+            $host = \defined('INTL_IDNA_VARIANT_UTS46') ? idn_to_ascii($host, \IDNA_DEFAULT | \IDNA_USE_STD3_RULES | \IDNA_CHECK_BIDI | \IDNA_CHECK_CONTEXTJ | \IDNA_NONTRANSITIONAL_TO_ASCII, \INTL_IDNA_VARIANT_UTS46) ?: strtolower($host) : strtolower($host);
             $host .= $port ? ':'.$port : '';
         }
 
@@ -465,7 +468,7 @@ trait HttpClientTrait
                 continue;
             }
 
-            if (false !== strpos($parts[$part], '%')) {
+            if (str_contains($parts[$part], '%')) {
                 // https://tools.ietf.org/html/rfc3986#section-2.3
                 $parts[$part] = preg_replace_callback('/%(?:2[DE]|3[0-9]|[46][1-9A-F]|5F|[57][0-9A]|7E)++/i', function ($m) { return rawurldecode($m[0]); }, $parts[$part]);
             }
@@ -493,11 +496,11 @@ trait HttpClientTrait
         $result = '';
 
         while (!\in_array($path, ['', '.', '..'], true)) {
-            if ('.' === $path[0] && (0 === strpos($path, $p = '../') || 0 === strpos($path, $p = './'))) {
+            if ('.' === $path[0] && (str_starts_with($path, $p = '../') || str_starts_with($path, $p = './'))) {
                 $path = substr($path, \strlen($p));
-            } elseif ('/.' === $path || 0 === strpos($path, '/./')) {
+            } elseif ('/.' === $path || str_starts_with($path, '/./')) {
                 $path = substr_replace($path, '/', 0, 3);
-            } elseif ('/..' === $path || 0 === strpos($path, '/../')) {
+            } elseif ('/..' === $path || str_starts_with($path, '/../')) {
                 $i = strrpos($result, '/');
                 $result = $i ? substr($result, 0, $i) : '';
                 $path = substr_replace($path, '/', 0, 4);

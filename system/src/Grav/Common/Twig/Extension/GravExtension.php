@@ -3,7 +3,7 @@
 /**
  * @package    Grav\Common\Twig
  *
- * @copyright  Copyright (c) 2015 - 2021 Trilby Media, LLC. All rights reserved.
+ * @copyright  Copyright (c) 2015 - 2022 Trilby Media, LLC. All rights reserved.
  * @license    MIT License; see LICENSE file for details.
  */
 
@@ -22,6 +22,7 @@ use Grav\Common\Page\Media;
 use Grav\Common\Scheduler\Cron;
 use Grav\Common\Security;
 use Grav\Common\Twig\TokenParser\TwigTokenParserCache;
+use Grav\Common\Twig\TokenParser\TwigTokenParserLink;
 use Grav\Common\Twig\TokenParser\TwigTokenParserRender;
 use Grav\Common\Twig\TokenParser\TwigTokenParserScript;
 use Grav\Common\Twig\TokenParser\TwigTokenParserStyle;
@@ -90,7 +91,7 @@ class GravExtension extends AbstractExtension implements GlobalsInterface
      *
      * @return array
      */
-    public function getGlobals()
+    public function getGlobals(): array
     {
         return [
             'grav' => $this->grav,
@@ -102,7 +103,7 @@ class GravExtension extends AbstractExtension implements GlobalsInterface
      *
      * @return array
      */
-    public function getFilters()
+    public function getFilters(): array
     {
         return [
             new TwigFilter('*ize', [$this, 'inflectorFilter']),
@@ -115,6 +116,7 @@ class GravExtension extends AbstractExtension implements GlobalsInterface
             new TwigFilter('defined', [$this, 'definedDefaultFilter']),
             new TwigFilter('ends_with', [$this, 'endsWithFilter']),
             new TwigFilter('fieldName', [$this, 'fieldNameFilter']),
+            new TwigFilter('parent_field', [$this, 'fieldParentFilter']),
             new TwigFilter('ksort', [$this, 'ksortFilter']),
             new TwigFilter('ltrim', [$this, 'ltrimFilter']),
             new TwigFilter('markdown', [$this, 'markdownFunction'], ['needs_context' => true, 'is_safe' => ['html']]),
@@ -155,6 +157,7 @@ class GravExtension extends AbstractExtension implements GlobalsInterface
             new TwigFilter('bool', [$this, 'boolFilter']),
             new TwigFilter('float', [$this, 'floatFilter'], ['is_safe' => ['all']]),
             new TwigFilter('array', [$this, 'arrayFilter']),
+            new TwigFilter('yaml', [$this, 'yamlFilter']),
 
             // Object Types
             new TwigFilter('get_type', [$this, 'getTypeFunc']),
@@ -171,7 +174,7 @@ class GravExtension extends AbstractExtension implements GlobalsInterface
      *
      * @return array
      */
-    public function getFunctions()
+    public function getFunctions(): array
     {
         return [
             new TwigFunction('array', [$this, 'arrayFilter']),
@@ -216,6 +219,7 @@ class GravExtension extends AbstractExtension implements GlobalsInterface
             new TwigFunction('cron', [$this, 'cronFunc']),
             new TwigFunction('svg_image', [$this, 'svgImageFunction']),
             new TwigFunction('xss', [$this, 'xssFunc']),
+            new TwigFunction('unique_id', [$this, 'uniqueId']),
 
             // Translations
             new TwigFunction('t', [$this, 'translate'], ['needs_environment' => true]),
@@ -242,7 +246,7 @@ class GravExtension extends AbstractExtension implements GlobalsInterface
     /**
      * @return array
      */
-    public function getTokenParsers()
+    public function getTokenParsers(): array
     {
         return [
             new TwigTokenParserRender(),
@@ -250,12 +254,17 @@ class GravExtension extends AbstractExtension implements GlobalsInterface
             new TwigTokenParserTryCatch(),
             new TwigTokenParserScript(),
             new TwigTokenParserStyle(),
+            new TwigTokenParserLink(),
             new TwigTokenParserMarkdown(),
             new TwigTokenParserSwitch(),
             new TwigTokenParserCache(),
         ];
     }
 
+    /**
+     * @param mixed $var
+     * @return string
+     */
     public function print_r($var)
     {
         return print_r($var, true);
@@ -272,6 +281,20 @@ class GravExtension extends AbstractExtension implements GlobalsInterface
         $path = explode('.', rtrim($str, '.'));
 
         return array_shift($path) . ($path ? '[' . implode('][', $path) . ']' : '');
+    }
+
+    /**
+     * Filters field name by changing dot notation into array notation.
+     *
+     * @param  string $str
+     * @return string
+     */
+    public function fieldParentFilter($str)
+    {
+        $path = explode('.', rtrim($str, '.'));
+        array_pop($path);
+
+        return implode('.', $path);
     }
 
     /**
@@ -654,6 +677,20 @@ class GravExtension extends AbstractExtension implements GlobalsInterface
     }
 
     /**
+     * Generates a random string with configurable length, prefix and suffix.
+     * Unlike the built-in `uniqid()`, this string is non-conflicting and safe
+     *
+     * @param int $length
+     * @param array $options
+     * @return string
+     * @throws \Exception
+     */
+    public function uniqueId(int $length = 9, array $options = ['prefix' => '', 'suffix' => '']): string
+    {
+        return Utils::uniqueId($length, $options);
+    }
+
+    /**
      * @param string $string
      * @return string
      */
@@ -808,15 +845,22 @@ class GravExtension extends AbstractExtension implements GlobalsInterface
     }
 
     /**
+     * @param array|object $value
+     * @param int|null $inline
+     * @param int|null $indent
+     * @return string
+     */
+    public function yamlFilter($value, $inline = null, $indent = null): string
+    {
+        return Yaml::dump($value, $inline, $indent);
+    }
+
+    /**
      * @param Environment $twig
      * @return string
      */
-    public function translate(Environment $twig)
+    public function translate(Environment $twig, ...$args)
     {
-        // shift off the environment
-        $args = func_get_args();
-        array_shift($args);
-
         // If admin and tu filter provided, use it
         if (isset($this->grav['admin'])) {
             $numargs = count($args);
@@ -824,6 +868,12 @@ class GravExtension extends AbstractExtension implements GlobalsInterface
 
             if (($numargs === 3 && is_array($args[1])) || ($numargs === 2 && !is_array($args[1]))) {
                 $lang = array_pop($args);
+                /** @var Language $language */
+                $language = $this->grav['language'];
+                if (is_string($lang) && !$language->getLanguageCode($lang)) {
+                    $args[] = $lang;
+                    $lang = null;
+                }
             } elseif ($numargs === 2 && is_array($args[1])) {
                 $subs = array_pop($args);
                 $args = array_merge($args, $subs);
@@ -1331,7 +1381,7 @@ class GravExtension extends AbstractExtension implements GlobalsInterface
      */
     public function vardumpFunc($var)
     {
-        var_dump($var);
+        dump($var);
     }
 
     /**
@@ -1395,7 +1445,7 @@ class GravExtension extends AbstractExtension implements GlobalsInterface
      * @param array $context      Twig Context
      * @param string $var variable to be found (using dot notation)
      * @param null $default the default value to be used as last resort
-     * @param null $page an optional page to use for the current page
+     * @param PageInterface|null $page an optional page to use for the current page
      * @param bool $exists toggle to simply return the page where the variable is set, else null
      * @return mixed
      */
@@ -1499,7 +1549,7 @@ class GravExtension extends AbstractExtension implements GlobalsInterface
             }
 
             //Look for existing class
-            $svg = preg_replace_callback('/^<svg[^>]*(class=\")([^"]*)(\")[^>]*>/', function($matches) use ($classes, &$matched) {
+            $svg = preg_replace_callback('/^<svg[^>]*(class=\"([^"]*)\")[^>]*>/', function($matches) use ($classes, &$matched) {
                 if (isset($matches[2])) {
                     $new_classes = $matches[2] . $classes;
                     $matched = true;

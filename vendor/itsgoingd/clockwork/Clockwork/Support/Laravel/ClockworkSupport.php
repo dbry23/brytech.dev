@@ -78,10 +78,10 @@ class ClockworkSupport
 
 		if (is_array($data)) {
 			$data = array_map(function ($request) use ($except, $only) {
-				return $only ? $request->only($only) : $request->except(array_merge($except, [ 'updateToken' ]));
+				return $only ? $request->only(array_diff($only, [ 'updateToken' ])) : $request->except(array_merge($except, [ 'updateToken' ]));
 			}, $data);
 		} elseif ($data) {
-			$data = $only ? $data->only($only) : $data->except(array_merge($except, [ 'updateToken' ]));
+			$data = $only ? $data->only(array_diff($only, [ 'updateToken' ])) : $data->except(array_merge($except, [ 'updateToken' ]));
 		}
 
 		return new JsonResponse($data);
@@ -204,6 +204,20 @@ class ClockworkSupport
 		return $this->app['clockwork.laravel'];
 	}
 
+	public function handleOctaneEvents()
+	{
+		$this->app['events']->listen(\Laravel\Octane\Events\RequestReceived::class, function ($event) {
+			$this->app = $event->sandbox;
+			$this->incomingRequest = null;
+
+			$this->app->forgetInstance('clockwork.request');
+			$request = $this->app->make('clockwork.request')->override('requestTime', microtime(true));
+
+			$this->app['clockwork']->reset()->request($request);
+			$this->app['clockwork.laravel']->setApplication($this->app);
+		});
+	}
+
 	// Make a storage instance based on the current configuration
 	public function makeStorage()
 	{
@@ -302,6 +316,8 @@ class ClockworkSupport
 			if (isset($payload['clockwork_parent_id'])) $request->setParent($payload['clockwork_parent_id']);
 
 			$this->app->make('clockwork')->reset()->request($request);
+
+			$this->app['clockwork.queue']->setCurrentRequestId($request->id);
 		});
 
 		$this->app['events']->listen(\Illuminate\Queue\Events\JobProcessed::class, function ($event) {
@@ -398,6 +414,7 @@ class ClockworkSupport
 				'requestId' => $clockworkRequest->id,
 				'version'   => Clockwork::VERSION,
 				'path'      => $request->getBasePath() . '/__clockwork/',
+				'webPath'   => $request->getBasePath() . '/' . $this->webPaths()[0] . '/app',
 				'token'     => $clockworkRequest->updateToken,
 				'metrics'   => $this->isCollectingClientMetrics(),
 				'toolbar'   => $this->isToolbarEnabled()
@@ -443,7 +460,7 @@ class ClockworkSupport
 			'tracesSkip'  => StackFilter::make()
 				->isNotVendor(array_merge(
 					$this->getConfig('stack_traces.skip_vendors', []),
-					[ 'itsgoingd', 'laravel', 'illuminate' ]
+					[ 'itsgoingd', 'laravel', 'illuminate', 'psr' ]
 				))
 				->isNotNamespace($this->getConfig('stack_traces.skip_namespaces', []))
 				->isNotFunction([ 'call_user_func', 'call_user_func_array' ])
@@ -670,6 +687,7 @@ class ClockworkSupport
 			'migrate:fresh', 'migrate:install', 'migrate:refresh', 'migrate:reset', 'migrate:rollback',
 			'migrate:status',
 			'notifications:table',
+			'octane:install', 'octane:reload', 'octane:start', 'octane:status', 'octane:stop',
 			'optimize:clear',
 			'package:discover',
 			'queue:failed', 'queue:failed-table', 'queue:flush', 'queue:forget', 'queue:listen', 'queue:restart',

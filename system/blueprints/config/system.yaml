@@ -888,9 +888,45 @@ form:
           title: PLUGIN_ADMIN.ASSETS
 
           fields:
-            assets_section:
+            general_config_section:
               type: section
-              title: PLUGIN_ADMIN.ASSETS
+              title: PLUGIN_ADMIN.GENERAL_CONFIG
+              underline: true
+
+            assets.enable_asset_timestamp:
+              type: toggle
+              label: PLUGIN_ADMIN.ENABLED_TIMESTAMPS_ON_ASSETS
+              help: PLUGIN_ADMIN.ENABLED_TIMESTAMPS_ON_ASSETS_HELP
+              highlight: 0
+              options:
+                1: PLUGIN_ADMIN.YES
+                0: PLUGIN_ADMIN.NO
+              validate:
+                type: bool
+
+            assets.enable_asset_sri:
+              type: toggle
+              label: PLUGIN_ADMIN.ENABLED_SRI_ON_ASSETS
+              help: PLUGIN_ADMIN.ENABLED_SRI_ON_ASSETS_HELP
+              highlight: 0
+              options:
+                1: PLUGIN_ADMIN.YES
+                0: PLUGIN_ADMIN.NO
+              validate:
+                type: bool
+
+            assets.collections:
+              type: multilevel
+              label: PLUGIN_ADMIN.COLLECTIONS
+              placeholder_key: collection_name
+              placeholder_value: collection_path
+              validate:
+                type: array
+
+
+            css_assets_section:
+              type: section
+              title: PLUGIN_ADMIN.CSS_ASSETS
               underline: true
 
             assets.css_pipeline:
@@ -959,6 +995,11 @@ form:
               validate:
                 type: bool
 
+            js_assets_section:
+              type: section
+              title: PLUGIN_ADMIN.JS_ASSETS
+              underline: true
+
             assets.js_pipeline:
               type: toggle
               label: PLUGIN_ADMIN.JAVASCRIPT_PIPELINE
@@ -1003,10 +1044,15 @@ form:
               validate:
                 type: bool
 
-            assets.enable_asset_timestamp:
+            js_module_assets_section:
+              type: section
+              title: PLUGIN_ADMIN.JS_MODULE_ASSETS
+              underline: true
+
+            assets.js_module_pipeline:
               type: toggle
-              label: PLUGIN_ADMIN.ENABLED_TIMESTAMPS_ON_ASSETS
-              help: PLUGIN_ADMIN.ENABLED_TIMESTAMPS_ON_ASSETS_HELP
+              label: PLUGIN_ADMIN.JAVASCRIPT_MODULE_PIPELINE
+              help: PLUGIN_ADMIN.JAVASCRIPT_MODULE_PIPELINE_HELP
               highlight: 0
               options:
                 1: PLUGIN_ADMIN.YES
@@ -1014,24 +1060,29 @@ form:
               validate:
                 type: bool
 
-            assets.enable_asset_sri:
+            assets.js_module_pipeline_include_externals:
               type: toggle
-              label: PLUGIN_ADMIN.ENABLED_SRI_ON_ASSETS
-              help: PLUGIN_ADMIN.ENABLED_SRI_ON_ASSETS_HELP
-              highlight: 0
+              label: PLUGIN_ADMIN.JAVASCRIPT_MODULE_PIPELINE_INCLUDE_EXTERNALS
+              help: PLUGIN_ADMIN.JAVASCRIPT_MODULE_PIPELINE_INCLUDE_EXTERNALS_HELP
+              highlight: 1
               options:
                 1: PLUGIN_ADMIN.YES
                 0: PLUGIN_ADMIN.NO
               validate:
                 type: bool
 
-            assets.collections:
-              type: multilevel
-              label: PLUGIN_ADMIN.COLLECTIONS
-              placeholder_key: collection_name
-              placeholder_value: collection_path
+            assets.js_module_pipeline_before_excludes:
+              type: toggle
+              label: PLUGIN_ADMIN.JAVASCRIPT_MODULE_PIPELINE_BEFORE_EXCLUDES
+              help: PLUGIN_ADMIN.JAVASCRIPT_MODULE_PIPELINE_BEFORE_EXCLUDES_HELP
+              highlight: 1
+              options:
+                1: PLUGIN_ADMIN.YES
+                0: PLUGIN_ADMIN.NO
               validate:
-                type: array
+                type: bool
+
+
 
         errors:
           type: tab
@@ -1394,6 +1445,18 @@ form:
               validate:
                 type: bool
 
+            session.secure_https:
+              type: toggle
+              label: PLUGIN_ADMIN.SESSION_SECURE_HTTPS
+              help: PLUGIN_ADMIN.SESSION_SECURE_HTTPS_HELP
+              highlight: 1
+              options:
+                1: PLUGIN_ADMIN.YES
+                0: PLUGIN_ADMIN.NO
+              default: true
+              validate:
+                type: bool
+
             session.httponly:
               type: toggle
               label: PLUGIN_ADMIN.SESSION_HTTPONLY
@@ -1446,6 +1509,10 @@ form:
               title: PLUGIN_ADMIN.ADVANCED
               underline: true
 
+            gpm_section:
+              type: section
+              title: PLUGIN_ADMIN.GPM_SECTION
+
             gpm.releases:
               type: toggle
               label: PLUGIN_ADMIN.GPM_RELEASES
@@ -1454,23 +1521,6 @@ form:
               options:
                 stable: PLUGIN_ADMIN.STABLE
                 testing: PLUGIN_ADMIN.TESTING
-
-            gpm.proxy_url:
-              type: text
-              size: medium
-              placeholder: "e.g. 127.0.0.1:3128"
-              label: PLUGIN_ADMIN.PROXY_URL
-              help: PLUGIN_ADMIN.PROXY_URL_HELP
-
-            gpm.method:
-              type: toggle
-              label: PLUGIN_ADMIN.GPM_METHOD
-              highlight: auto
-              help: PLUGIN_ADMIN.GPM_METHOD_HELP
-              options:
-                auto: PLUGIN_ADMIN.AUTO
-                fopen: PLUGIN_ADMIN.FOPEN
-                curl: PLUGIN_ADMIN.CURL
 
             gpm.official_gpm_only:
               type: toggle
@@ -1484,16 +1534,79 @@ form:
               validate:
                 type: bool
 
-            gpm.verify_peer:
+            http_section:
+              type: section
+              title: PLUGIN_ADMIN.HTTP_SECTION
+
+            http.method:
               type: toggle
-              label: PLUGIN_ADMIN.GPM_VERIFY_PEER
+              label: PLUGIN_ADMIN.GPM_METHOD
+              highlight: auto
+              help: PLUGIN_ADMIN.GPM_METHOD_HELP
+              options:
+                auto: PLUGIN_ADMIN.AUTO
+                fopen: PLUGIN_ADMIN.FOPEN
+                curl: PLUGIN_ADMIN.CURL
+
+            http.enable_proxy:
+              type: toggle
+              label: PLUGIN_ADMIN.SSL_ENABLE_PROXY
               highlight: 1
-              help: PLUGIN_ADMIN.GPM_VERIFY_PEER_HELP
+              options:
+                1: PLUGIN_ADMIN.YES
+                0: PLUGIN_ADMIN.NO
+              default: false
+              validate:
+                type: bool
+
+            http.proxy_url:
+              type: text
+              size: medium
+              placeholder: "e.g. 127.0.0.1:3128"
+              label: PLUGIN_ADMIN.PROXY_URL
+              help: PLUGIN_ADMIN.PROXY_URL_HELP
+
+            http.proxy_cert_path:
+              type: text
+              size: medium
+              placeholder: "e.g. /Users/bob/certs/"
+              label: PLUGIN_ADMIN.PROXY_CERT
+              help: PLUGIN_ADMIN.PROXY_CERT_HELP
+
+            http.verify_peer:
+              type: toggle
+              label: PLUGIN_ADMIN.SSL_VERIFY_PEER
+              highlight: 1
+              help: PLUGIN_ADMIN.SSL_VERIFY_PEER_HELP
               options:
                 1: PLUGIN_ADMIN.YES
                 0: PLUGIN_ADMIN.NO
               validate:
                 type: bool
+
+            http.verify_host:
+              type: toggle
+              label: PLUGIN_ADMIN.SSL_VERIFY_HOST
+              highlight: 1
+              help: PLUGIN_ADMIN.SSL_VERIFY_HOST_HELP
+              options:
+                1: PLUGIN_ADMIN.YES
+                0: PLUGIN_ADMIN.NO
+              validate:
+                type: bool
+
+            http.concurrent_connections:
+              type: number
+              size: x-small
+              label: PLUGIN_ADMIN.HTTP_CONNECTIONS
+              help: PLUGIN_ADMIN.HTTP_CONNECTIONS_HELP
+              validate:
+                min: 1
+                max: 20
+
+            misc_section:
+              type: section
+              title: PLUGIN_ADMIN.MISC_SECTION
 
             reverse_proxy_setup:
               type: toggle

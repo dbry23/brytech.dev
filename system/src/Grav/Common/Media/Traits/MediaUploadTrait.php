@@ -3,7 +3,7 @@
 /**
  * @package    Grav\Common\Media
  *
- * @copyright  Copyright (c) 2015 - 2021 Trilby Media, LLC. All rights reserved.
+ * @copyright  Copyright (c) 2015 - 2022 Trilby Media, LLC. All rights reserved.
  * @license    MIT License; see LICENSE file for details.
  */
 
@@ -20,11 +20,13 @@ use Grav\Common\Security;
 use Grav\Common\Utils;
 use Grav\Framework\Filesystem\Filesystem;
 use Grav\Framework\Form\FormFlashFile;
+use Grav\Framework\Mime\MimeTypes;
 use Psr\Http\Message\UploadedFileInterface;
 use RocketTheme\Toolbox\File\YamlFile;
 use RocketTheme\Toolbox\ResourceLocator\UniformResourceLocator;
 use RuntimeException;
 use function dirname;
+use function in_array;
 
 /**
  * Implements media upload and delete functionality.
@@ -106,7 +108,7 @@ trait MediaUploadTrait
      *
      * @param array $metadata
      * @param array|null $settings
-     * @return string|null
+     * @return string
      * @throws RuntimeException
      */
     public function checkFileMetadata(array $metadata, string $filename = null, array $settings = null): string
@@ -130,9 +132,9 @@ trait MediaUploadTrait
             if ($folder === '.') {
                 $folder = '';
             }
-            $filename = basename($filename);
+            $filename = Utils::basename($filename);
         }
-        $extension = pathinfo($filename, PATHINFO_EXTENSION);
+        $extension = Utils::pathinfo($filename, PATHINFO_EXTENSION);
 
         // Decide which filename to use.
         if ($settings['random_name']) {
@@ -179,16 +181,20 @@ trait MediaUploadTrait
             }
         }
 
+        $grav = Grav::instance();
+        /** @var MimeTypes $mimeChecker */
+        $mimeChecker = $grav['mime'];
+
         // Handle Accepted file types. Accept can only be mime types (image/png | image/*) or file extensions (.pdf | .jpg)
-        $accepted = false;
-        $errors = [];
         // Do not trust mime type sent by the browser.
-        $mime = Utils::getMimeByFilename($filename);
-        $mimeTest = $metadata['mime'] ?? $mime;
-        if ($mime !== $mimeTest) {
+        $mime = $metadata['mime'] ?? $mimeChecker->getMimeType($extension);
+        $validExtensions = $mimeChecker->getExtensions($mime);
+        if (!in_array($extension, $validExtensions, true)) {
             throw new RuntimeException('The mime type does not match to file extension', 400);
         }
 
+        $accepted = false;
+        $errors = [];
         foreach ((array)$settings['accept'] as $type) {
             // Force acceptance of any file when star notation
             if ($type === '*') {
@@ -419,6 +425,17 @@ trait MediaUploadTrait
     }
 
     /**
+     * Get upload settings.
+     *
+     * @param array|null $settings Form field specific settings (override).
+     * @return array
+     */
+    public function getUploadSettings(?array $settings = null): array
+    {
+        return null !== $settings ? $settings + $this->_upload_defaults : $this->_upload_defaults;
+    }
+
+    /**
      * Internal logic to copy file.
      *
      * @param string $src
@@ -556,6 +573,8 @@ trait MediaUploadTrait
                 }
             }
         }
+
+        $this->hide($filename);
     }
 
     /**
@@ -602,17 +621,6 @@ trait MediaUploadTrait
         if ($file->exists()) {
             $file->delete();
         }
-    }
-
-    /**
-     * Get upload settings.
-     *
-     * @param array|null $settings Form field specific settings (override).
-     * @return array
-     */
-    protected function getUploadSettings(?array $settings = null): array
-    {
-        return null !== $settings ? $settings + $this->_upload_defaults : $this->_upload_defaults;
     }
 
     /**
