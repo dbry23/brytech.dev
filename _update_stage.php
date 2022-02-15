@@ -3,7 +3,7 @@ date_default_timezone_set('America/New_York');
 ignore_user_abort(true);
 set_time_limit(0);
 
-$repo          = '~/philageek.com/brytech.dev';
+$repo          = '~/dev.brytech.dev';
 $branch        = 'main';
 $output        = array();
 
