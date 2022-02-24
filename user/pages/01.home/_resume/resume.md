@@ -45,7 +45,7 @@ sections:
                     <li>Designed three new database schemas with pre-populated data for students to learn SQL statements, joins, and aggregate functions.</li>
                     <li>Created technique for automated testing of SQL exercises using unit testing framework and not give away solutions to students.</li>
                     <li>Produced new and revised current curriculum materials—tutorials, exercises, reading content, quizzes, and instructor lecture notes. Ported content between C# and Java.</li>
-                    <li>Tech: C#, Java, MSTest, JUnit, MS SQL Server, PostgreSQL, Vue.js, HTML/CSS/JS, Markdown</li>
+                    <li>Tech: C#, Java, MSTest, JUnit, MS SQL Server, PostgreSQL, Vue.js, HTML/CSS/JS, Docker, Markdown</li>
                 </ul>'
             brysmarine:
                 title: 'Bry''s Marine (Marine Sales/Service)'
