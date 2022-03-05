@@ -21,9 +21,5 @@ file_put_contents(rtrim(getcwd(), '/').'/___github-log.txt', implode("\n", $outp
 
 //clear grav cache
 echo "Clearing Grav cache...\r\n";
-$grav_output = shell_exec('php-7.2 bin/grav cache --all');
+$grav_output = shell_exec('php-7.4 bin/grav cache --all');
 echo $grav_output;
-
-//clear cloudflare cache
-echo "Clearing Cloudflare cache...\r\n";
-shell_exec("curl -X POST \"https://api.cloudflare.com/client/v4/zones/a6766a7ec2c5e1d63d0a2a72ba9d2bb8/purge_cache\" -H \"Authorization: Bearer W5MG9TmK7Fxtx18xxwkBMHbbYpWF4SSeodqEUd4P\" -H \"Content-Type: application/json\" --data '{\"purge_everything\":true}'");
