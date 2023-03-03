@@ -1,3 +1,16 @@
+# v3.7.3
+## 02/17/2023
+
+1. [](#bugfix)
+   * Fixed an issue where user was not being redirected to the correct page after login
+
+# v3.7.2
+## 01/02/2023
+
+1. [](#new)
+   * Added new `onBeforeSessionStart()` event to store redirect + messages when session is regenerated during login
+   * Requires Grav `1.7.38` for new event availability
+
 # v3.7.1
 ## 06/14/2022
 
