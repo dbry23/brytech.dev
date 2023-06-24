@@ -65,8 +65,6 @@ class FormPlugin extends Plugin
     protected $active_forms = [];
     /** @var array */
     protected $json_response = [];
-    /** @var bool */
-    protected $recache_forms = false;
 
     /**
      * @return bool
@@ -222,11 +220,6 @@ class FormPlugin extends Plugin
     {
         $submitted = false;
         $this->json_response = [];
-
-        // Save cached forms.
-        if ($this->recache_forms) {
-            $this->saveCachedForms();
-        }
 
         /** @var PageInterface $page */
         $page = $this->grav['page'];
@@ -838,9 +831,8 @@ class FormPlugin extends Plugin
 
         if (!isset($this->forms[$route][$name])) {
             $form['_page_routable'] = !$page->isModule();
-
             $this->forms[$route][$name] = $form;
-            $this->recache_forms = true;
+            $this->saveCachedForms();
         }
     }
 
@@ -863,7 +855,7 @@ class FormPlugin extends Plugin
             $form['_page_routable'] = true;
 
             $this->forms[$route][$name] = $form;
-            $this->recache_forms = true;
+            $this->saveCachedForms();
         }
     }
 
@@ -1182,8 +1174,8 @@ class FormPlugin extends Plugin
             }
 
             // Try to find the posted form if available.
-            $form_name = $this->grav['uri']->post('__form-name__', FILTER_SANITIZE_STRING) ?? '';
-            $unique_id = $this->grav['uri']->post('__unique_form_id__', FILTER_SANITIZE_STRING) ?? '';
+            $form_name = $this->grav['uri']->post('__form-name__', GRAV_SANITIZE_STRING) ?? '';
+            $unique_id = $this->grav['uri']->post('__unique_form_id__', GRAV_SANITIZE_STRING) ?? '';
 
             if (!$form_name) {
                 $form_name = $page ? $page->slug() : null;
@@ -1267,13 +1259,6 @@ class FormPlugin extends Plugin
      */
     protected function saveCachedForms(): void
     {
-        // Save the current state of the forms to cache
-        if (!$this->recache_forms) {
-            return;
-        }
-
-        $this->recache_forms = false;
-
         /** @var Cache $cache */
         $cache = $this->grav['cache'];
 
