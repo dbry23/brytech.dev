@@ -108,6 +108,14 @@ sections:
         title: 'Other Technical'
         css_class: 'work'
         items:
+            pickformetv:
+                title: 'Pick For Me TV'
+                date: '2022'
+                description: '<ul>
+                    <li>Developed website to pick a random episode from a user-defined list of TV shows. Utilized TMDB (The Movie Database) API, Vue.js front end, and Express.js back end.</li>
+                    <li>
+                    <li><a href="https://pickforme.tv" target="_blank" rel="noopener">https://pickforme.tv</a></li>
+                    </ul>'
             philageek:
                 title: 'PhilaGeek'
                 date: '2013 - 2014'
