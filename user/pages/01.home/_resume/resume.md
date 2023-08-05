@@ -53,7 +53,7 @@ sections:
                 date: 'Oct 2019 - Dec 2019'
                 description: '<ul>
                     <li>Rebuilt and redesigned website on lightweight CMS with focus on SEO and better user experience.</li>
-                    <li> Site: <a href="https://www.brysmarine.com">www.brysmarine.com</a></li>
+                    <li>Site: <a href="https://www.brysmarine.com" target="_blank" rel="noopener">www.brysmarine.com</a></li>
                     <li>Tech: Grav CMS, PHP/Twig, Markdown, jQuery, HTML/CSS/JS, DreamHost, Cloudinary</li>
                 </ul>'
             tss:
@@ -62,13 +62,13 @@ sections:
                 date: 'Jul 2016 - Sep 2019'
                 description: '<ul>
                     <li>Developed interactive sign designer that shows live preview as customer types and changes font size, color, and positioning. Resulted in more than $36,000 of additional sales in first 6 months.
-                        <ul><li><a href="https://www.trafficsafetystore.com/product/customization?productoptionid=4625">www.trafficsafetystore.com/product/customization?productoptionid=4625</a></li></ul></li>
+                        <ul><li><a href="https://www.trafficsafetystore.com/product/customization?productoptionid=4625" target="_blank" rel="noopener nofollow noreferrer">www.trafficsafetystore.com/product/customization?productoptionid=4625</a></li></ul></li>
                     <li>Doubled sales of vinyl roll-up signs by implementing new stylish interface with built-in search that brings the most relevant signs to the top, and supporting hundreds of different sign legends.
-                        <ul><li><a href="https://www.trafficsafetystore.com/traffic-signs/roll-up-48">www.trafficsafetystore.com/traffic-signs/roll-up-48</a></li></ul></li>
+                        <ul><li><a href="https://www.trafficsafetystore.com/traffic-signs/roll-up-48" target="_blank" rel="noopener nofollow noreferrer">www.trafficsafetystore.com/traffic-signs/roll-up-48</a></li></ul></li>
                     <li>Increased conversion rates of safety vests by 20% with enhanced site search and filtering capabilities that gave customers the ability to find products by size, color, material, and ANSI safety rating quickly.
-                        <ul><li><a href="https://www.trafficsafetystore.com/safety-vests">www.trafficsafetystore.com/safety-vests</a></li></ul></li>
+                        <ul><li><a href="https://www.trafficsafetystore.com/safety-vests" target="_blank" rel="noopener nofollow noreferrer">www.trafficsafetystore.com/safety-vests</a></li></ul></li>
                     <li>Created new admin interface achieving goals of unified login across allsites, better visibility into e-commerce & phone orders, and toggling on-sale/out-of-stock quickly for multiple products.</li>
-                    <li>Sites: <a href="https://www.trafficsafetystore.com">trafficsafetystore.com</a>, <a href="https://parkingblock.com">parkingblock.com</a>, <a href="https://www.trafficcones.com">trafficcones.com</a>, <a href="https://www.airportsafetystore.com">airportsafetystore.com</a></li>
+                    <li>Sites: <a href="https://www.trafficsafetystore.com" target="_blank" rel="noopener nofollow noreferrer">trafficsafetystore.com</a>, <a href="https://parkingblock.com" target="_blank" rel="noopener nofollow noreferrer">parkingblock.com</a>, <a href="https://www.trafficcones.com" target="_blank" rel="noopener nofollow noreferrer">trafficcones.com</a>, <a href="https://www.airportsafetystore.com" target="_blank" rel="noopener nofollow noreferrer">airportsafetystore.com</a></li>
                     <li>Tech: ASP.NET (C# MVC), React, jQuery, HTML/CSS/JS, Microsoft SQL Server, SSRS, Elasticsearch, Cloudinary</li>
                 </ul>'
             dechert:
