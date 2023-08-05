@@ -8,26 +8,26 @@ sections:
             skills:
                 description: 'With over 15 years of experience, I have worked with a variety of languages, ranging from the .NET ecosystem to web technologies to open-source languages.
                     <ul>
-                        <li><strong>Languages</strong>: C#, VB, Java, SQL, HTML, CSS, JavaScript, PHP, Twig, PowerShell, Bash</li>
-                        <li><strong>Libraries/Frameworks</strong>: ASP.NET (MVC & Web Forms), LINQ, Entity Framework, jQuery, React, Vue.js</li>
-                        <li><strong>Other</strong>: Visual Studio, Git, GitHub, GitLab, TeamCity, Octopus Deploy, Grunt, npm, TFS, Microsoft SSRS, Microsoft SSIS, Grav</li>
+                        <li><strong>Languages</strong>: C#, Java, SQL, HTML, CSS, JavaScript, PHP, Twig, Bash, PowerShell</li>
+                        <li><strong>Libraries/Frameworks</strong>: ASP.NET (MVC & Web Forms), Spring Boot, LINQ, Entity Framework, Vue.js, Express.js, jQuery</li>
+                        <li><strong>Other</strong>: Visual Studio, VS Code, IntelliJ, Git, GitHub, GitLab, Netlify, npm, Grav</li>
                 </ul>'
                 skills:
                     csharp:
                         name: 'C#'
                         anim: 'csharp'
-                        level: 92
-                    html:
-                        name: 'HTML'
-                        level: 85
+                        level: 95
+                    sql:
+                        name: 'SQL'
+                        level: 90
                     js:
                         name: 'JavaScript'
                         level: 85
+                    html:
+                        name: 'HTML'
+                        level: 85
                     css:
                         name: 'CSS'
-                        level: 80
-                    sql:
-                        name: 'SQL'
                         level: 80
                     java:
                         name: 'Java'
