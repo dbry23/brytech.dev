@@ -41,11 +41,11 @@ sections:
                 info: 'Curriculum Developer'
                 date: 'Jan 2020 - Present'
                 description: '<ul>
-                    <li>Developed new module capstone for students to demonstrate knowledge in client/server web API code and SQL backed storage through DAO classes.</li>
-                    <li>Designed three new database schemas with pre-populated data for students to learn SQL statements, joins, and aggregate functions.</li>
-                    <li>Created technique for automated testing of SQL exercises using unit testing framework and not give away solutions to students.</li>
+                    <li>Led team in refactoring project of splitting one day of content into two. Work included determining where new content was needed, enhancing existing material, and updating following days to utilize new patterns established.</li>
+                    <li>Designed and coded new module capstone for students to demonstrate knowledge in client/server web API code and SQL backed storage through DAO classes.</li>
+                    <li>Developed curriculum versioning strategy and utility tool to bundle curriculum content spread over 25+ repositories into one, with different amount of content and folder structures to support the full-time, part-time, and enterprise programs.</li>
                     <li>Produced new and revised current curriculum materials—tutorials, exercises, reading content, quizzes, and instructor lecture notes. Ported content between C# and Java.</li>
-                    <li>Tech: C#, Java, MSTest, JUnit, MS SQL Server, PostgreSQL, Vue.js, HTML/CSS/JS, Docker, Markdown</li>
+                    <li>Tech: C#, Java, MSTest, JUnit, Cypress, Microsoft SQL Server, PostgreSQL, Vue.js, HTML/CSS/JS, Docker, Markdown</li>
                 </ul>'
             brysmarine:
                 title: 'Bry''s Marine (Marine Sales/Service)'
