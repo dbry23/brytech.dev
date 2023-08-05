@@ -69,7 +69,7 @@ sections:
                         <ul><li><a href="https://www.trafficsafetystore.com/safety-vests">www.trafficsafetystore.com/safety-vests</a></li></ul></li>
                     <li>Created new admin interface achieving goals of unified login across allsites, better visibility into e-commerce & phone orders, and toggling on-sale/out-of-stock quickly for multiple products.</li>
                     <li>Sites: <a href="https://www.trafficsafetystore.com">trafficsafetystore.com</a>, <a href="https://parkingblock.com">parkingblock.com</a>, <a href="https://www.trafficcones.com">trafficcones.com</a>, <a href="https://www.airportsafetystore.com">airportsafetystore.com</a></li>
-                    <li>Tech: ASP.NET (C# MVC), React, jQuery, HTML/CSS/JS, MS SQL Server, SSRS, Elasticsearch, Cloudinary</li>
+                    <li>Tech: ASP.NET (C# MVC), React, jQuery, HTML/CSS/JS, Microsoft SQL Server, SSRS, Elasticsearch, Cloudinary</li>
                 </ul>'
             dechert:
                 title: 'Dechert LLP (Litigation & Transactional Law)'
@@ -79,7 +79,7 @@ sections:
                     <li>Boosted efficiency of General Counsel team saving over 10 hours/week with system to record ethical screens, manage access lists, and automatically secure digital documents & workspaces.</li>
                     <li>Saved firm over $20,000/year with internal skills & experience tracking application. Developed dynamic and interactive front end based on Photoshop mockups designed by marketing department.</li>
                     <li>Created custom interfaces using Okta & Box REST APIs to enable more customer service functions to be done by the Help Desk and IT Operations groups. Resulted in less customer frustration and downtime.</li>
-                    <li>Tech: ASP.NET (VBWeb Forms, C# MVC), jQuery, HTML/CSS/JS, MS SQL Server, SSRS, SSIS, iManage</li>
+                    <li>Tech: ASP.NET (VBWeb Forms, C# MVC), jQuery, HTML/CSS/JS, Microsoft SQL Server, SSRS, SSIS, iManage</li>
                 </ul>'
             coventry:
                 title: 'Coventry First (Life Insurance Settlement)'
@@ -117,7 +117,7 @@ sections:
                     <li><a href="https://pickforme.tv" target="_blank" rel="noopener">https://pickforme.tv</a></li>
                     </ul>'
             philageek:
-                title: 'PhilaGeek'
+                title: 'DD WRT Mobile'
                 date: '2013 - 2014'
                 description: '<ul><li>Developed iOS app for configuring routers running third-party firmware DD-WRT.</li></ul>'
             brysmarine:
@@ -125,7 +125,7 @@ sections:
                 date: '2010 - 2014'
                 description: '<ul>
                     <li>Developed custom interface for transmitting store inventory to manufacturer database searchable by all North American marine dealers. Part sales increased 10% helping clear out older and obsolete parts.</li>
-                    <li>Rewrote text-based custom inventory program as WinForms application for use on Windows 7.</li>
+                    <li>Rewrote text-based custom inventory program as WinForms application for use on modern Windows operating systems.</li>
                 </ul>'
     education:
         title: 'Education'
