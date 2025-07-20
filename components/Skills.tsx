@@ -85,7 +85,9 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
               viewport={{ once: true }}
-              className="bg-gray-50 dark:bg-dark-800 rounded-lg p-6"
+              // Make the first category span both columns on large screens
+              className={`bg-gray-50 dark:bg-dark-800 rounded-lg p-6
+                ${ categoryIndex === 0 ? 'lg:col-span-2' : '' }`}
             >
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
                 {category.title}
