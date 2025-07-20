@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -9,8 +9,12 @@ export const metadata: Metadata = {
   description: 'Senior Software Engineer with 19 years of experience in full-stack development, cloud architecture, and innovative software solutions.',
   keywords: ['software engineer', 'full-stack developer', 'cloud architecture', 'web development', 'mobile development'],
   authors: [{ name: 'BryTech' }],
-  viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
