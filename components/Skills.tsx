@@ -7,67 +7,53 @@ const Skills = () => {
     {
       title: 'Programming Languages',
       skills: [
-        { name: 'JavaScript/TypeScript', level: 95 },
-        { name: 'Python', level: 90 },
-        { name: 'Java', level: 85 },
-        { name: 'C#', level: 80 },
-        { name: 'Go', level: 75 },
-        { name: 'Rust', level: 70 }
+        { name: 'C#', level: 95 },
+        { name: 'JavaScript', level: 95 },
+        { name: 'SQL', level: 90 },
+        { name: 'HTML', level: 90 },
+        { name: 'CSS', level: 85 },
+        { name: 'Java', level: 75 },
       ]
     },
     {
-      title: 'Frontend Frameworks',
+      title: 'Frameworks / Libraries',
       skills: [
-        { name: 'React', level: 95 },
-        { name: 'Vue.js', level: 90 },
-        { name: 'Angular', level: 85 },
-        { name: 'Next.js', level: 90 },
-        { name: 'Svelte', level: 80 },
-        { name: 'Tailwind CSS', level: 95 }
-      ]
-    },
-    {
-      title: 'Backend & APIs',
-      skills: [
-        { name: 'Node.js', level: 95 },
-        { name: 'Express.js', level: 90 },
-        { name: 'Django', level: 85 },
-        { name: 'FastAPI', level: 80 },
-        { name: 'GraphQL', level: 85 },
-        { name: 'REST APIs', level: 95 }
-      ]
-    },
-    {
-      title: 'Databases',
-      skills: [
-        { name: 'PostgreSQL', level: 90 },
-        { name: 'MongoDB', level: 85 },
-        { name: 'Redis', level: 80 },
-        { name: 'MySQL', level: 85 },
-        { name: 'Elasticsearch', level: 75 },
-        { name: 'DynamoDB', level: 80 }
-      ]
-    },
-    {
-      title: 'Cloud & DevOps',
-      skills: [
-        { name: 'AWS', level: 90 },
-        { name: 'Docker', level: 85 },
-        { name: 'Kubernetes', level: 80 },
-        { name: 'Terraform', level: 75 },
-        { name: 'CI/CD', level: 90 },
-        { name: 'Microservices', level: 85 }
+        { name: 'ASP.NET', level: 95 },
+        { name: 'React', level: 90 },
+        { name: 'Spring Boot', level: 85 },
+        { name: 'Express.js', level: 85 },
+        { name: 'Vue.js', level: 85 },
+        { name: 'Razor', level: 80 },
+        { name: 'Entity Framework', level: 80 },
       ]
     },
     {
       title: 'Tools & Platforms',
       skills: [
         { name: 'Git', level: 95 },
-        { name: 'Linux', level: 90 },
         { name: 'VS Code', level: 95 },
-        { name: 'Jira', level: 85 },
-        { name: 'Jenkins', level: 80 },
-        { name: 'Prometheus', level: 75 }
+        { name: 'Visual Studio', level: 90 },
+        { name: 'IntelliJ', level: 90 },
+        { name: 'Bash', level: 90 },
+        { name: 'Docker', level: 85 },
+        { name: 'GitLab CI/CD', level: 85 },
+      ]
+    },
+    {
+      title: 'Testing',
+      skills: [
+        { name: 'MSTest', level: 95 },
+        { name: 'JUnit', level: 95 },
+        { name: 'Cypress', level: 85 },
+        { name: 'Vitest', level: 65 },
+      ]
+    },
+    {
+      title: 'Databases',
+      skills: [
+        { name: 'SQL Server', level: 90 },
+        { name: 'PostgreSQL', level: 85 },
+        { name: 'SQLite', level: 80 },
       ]
     }
   ]
@@ -150,10 +136,7 @@ const Skills = () => {
           </h3>
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              'Machine Learning', 'Data Analysis', 'System Design', 'Performance Optimization',
-              'Security Best Practices', 'Agile Methodologies', 'Technical Writing', 'Code Review',
-              'API Design', 'Database Optimization', 'Load Testing', 'Monitoring & Logging',
-              'Serverless Architecture', 'Event-Driven Systems', 'Message Queues', 'Caching Strategies'
+              'Full Stack', 'Front End', 'Back End', 'Leadership', 'Mentor/Coach', 'Agile Methodologies', 'Kanban', 'RDBMS', 'REST API', 'CI/CD', 'Unit Testing', 'Version Control', 'Cloud', 'Performance Optimization', 'Technical Writing', 'Code Review', 'API Design', 'Database Optimization', 'Subject Matter Expert', 'Continuous Learner', 'Product Development', 'Technical Support', 'Investigative', 'Software Debugging', 'Data Structures', 'Algorithms', 'Collaborative Team Player'
             ].map((skill, index) => (
               <motion.span
                 key={skill}
