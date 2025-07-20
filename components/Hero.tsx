@@ -23,9 +23,20 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="mb-6"
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200 text-sm font-medium mb-4">
-              Senior Software Engineer
-            </span>
+            <div className="flex flex-wrap justify-center gap-3 mb-4">
+              <span className="inline-block px-4 py-2 rounded-full bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200 text-sm font-medium">
+                Senior Software Engineer
+              </span>
+              <span className="inline-block px-4 py-2 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-sm font-medium">
+                Team Lead
+              </span>
+              <span className="inline-block px-4 py-2 rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 text-sm font-medium">
+                Technical Mentor
+              </span>
+              <span className="inline-block px-4 py-2 rounded-full bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 text-sm font-medium">
+                Full Stack Developer
+              </span>
+            </div>
           </motion.div>
 
           <motion.h1
@@ -34,8 +45,10 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6"
           >
-            Building the Future with{' '}
-            <span className="gradient-text">19 Years</span> of Experience
+            Building the Future
+            <span className="block text-2xl sm:text-3xl font-medium text-gray-700 dark:text-gray-300 mt-2">
+              with Decades of Experience & Innovation
+            </span>
           </motion.h1>
 
           <motion.p
@@ -44,8 +57,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-            Full-stack software engineer specializing in scalable web applications,
-            cloud architecture, and innovative solutions that drive business growth.
+            Full-stack software engineer blending technical excellence in web and database technologies with leadership and mentorship through collaboration and shared success.
           </motion.p>
 
           <motion.div
@@ -65,7 +77,7 @@ const Hero = () => {
             </motion.a>
 
             <motion.a
-              href="/resume.pdf"
+              href="/David_Bry_Resume.pdf"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center px-8 py-3 border-2 border-primary-600 text-primary-600 dark:text-primary-400 rounded-lg font-medium hover:bg-primary-600 hover:text-white transition-colors"
