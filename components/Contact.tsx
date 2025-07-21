@@ -1,48 +1,48 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Linkedin, Github, Twitter } from 'lucide-react'
+import { Mail, Phone, MapPin, Linkedin, Github, Code } from 'lucide-react'
 
 const Contact = () => {
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: 'Email',
-      value: 'hello@brytech.dev',
-      href: 'mailto:hello@brytech.dev'
-    },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
-    },
-    {
-      icon: MapPin,
-      label: 'Location',
-      value: 'San Francisco, CA',
-      href: '#'
-    }
-  ]
+  // const contactInfo = [
+  //   {
+  //     icon: Mail,
+  //     label: 'Email',
+  //     value: 'hello@brytech.dev',
+  //     href: 'mailto:hello@brytech.dev'
+  //   },
+  //   {
+  //     icon: Phone,
+  //     label: 'Phone',
+  //     value: '+1 (555) 123-4567',
+  //     href: 'tel:+15551234567'
+  //   },
+  //   {
+  //     icon: MapPin,
+  //     label: 'Location',
+  //     value: 'San Francisco, CA',
+  //     href: '#'
+  //   }
+  // ]
 
   const socialLinks = [
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/brytech',
+      href: 'https://www.linkedin.com/in/dbry23/',
       color: 'hover:text-blue-600'
     },
     {
       icon: Github,
       label: 'GitHub',
-      href: 'https://github.com/brytech',
+      href: 'https://github.com/dbry23',
       color: 'hover:text-gray-800 dark:hover:text-gray-200'
     },
     {
-      icon: Twitter,
-      label: 'Twitter',
-      href: 'https://twitter.com/brytech',
-      color: 'hover:text-blue-400'
+      icon: Code,
+      label: 'Stack Overflow',
+      href: 'https://stackoverflow.com/users/1034308/dave-bry',
+      color: 'hover:text-orange-500'
     }
   ]
 
@@ -59,10 +59,10 @@ const Contact = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Get In Touch
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          {/* <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             I'm always interested in new opportunities and exciting projects.
             Let's discuss how we can work together to bring your ideas to life.
-          </p>
+          </p> */}
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -157,7 +157,7 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            {/* <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Contact Information
             </h3>
             <div className="space-y-6">
@@ -179,7 +179,7 @@ const Contact = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
 
             {/* Social Links */}
             <div className="mt-8">
@@ -204,7 +204,7 @@ const Contact = () => {
             </div>
 
             {/* Availability */}
-            <div className="mt-8 p-6 bg-gray-50 dark:bg-dark-800 rounded-lg">
+            {/* <div className="mt-8 p-6 bg-gray-50 dark:bg-dark-800 rounded-lg">
               <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                 Availability
               </h4>
@@ -229,7 +229,7 @@ const Contact = () => {
                   Technical mentoring
                 </li>
               </ul>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </div>
