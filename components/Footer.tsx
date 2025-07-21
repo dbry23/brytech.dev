@@ -24,7 +24,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://linkedin.com/in/brytech"
+                href="https://www.linkedin.com/in/dbry23/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -32,7 +32,7 @@ const Footer = () => {
                 LinkedIn
               </a>
               <a
-                href="https://github.com/brytech"
+                href="https://github.com/dbry23"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -40,12 +40,12 @@ const Footer = () => {
                 GitHub
               </a>
               <a
-                href="https://twitter.com/brytech"
+                href="https://stackoverflow.com/users/1034308/dave-bry"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                Twitter
+                Stack Overflow
               </a>
             </div>
           </div>
@@ -102,19 +102,19 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
-                <span className="text-gray-300">Full-Stack Development</span>
+                <span className="text-gray-300">Full-Stack Engineering</span>
               </li>
               <li>
-                <span className="text-gray-300">Cloud Architecture</span>
+                <span className="text-gray-300">Technical Leadership</span>
               </li>
               <li>
-                <span className="text-gray-300">System Design</span>
+                <span className="text-gray-300">Mentorship & Training</span>
               </li>
               <li>
-                <span className="text-gray-300">Technical Consulting</span>
+                <span className="text-gray-300">System Architecture</span>
               </li>
               <li>
-                <span className="text-gray-300">Code Review</span>
+                <span className="text-gray-300">Custom Code Solutions</span>
               </li>
             </ul>
           </div>
