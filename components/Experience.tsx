@@ -6,74 +6,112 @@ import { Calendar, MapPin, Building } from 'lucide-react'
 const Experience = () => {
   const experiences = [
     {
-      title: 'Senior Software Engineer',
-      company: 'TechCorp Solutions',
-      location: 'San Francisco, CA',
-      period: '2020 - Present',
-      description: 'Leading full-stack development for enterprise-scale applications. Architected and implemented microservices infrastructure serving 2M+ users.',
+      title: 'Curriculum Developer',
+      company: 'Tech Elevator / Stride',
+      location: 'Remote',
+      period: 'Jan 2020 - Present',
+      description: 'Designing and developing educational content for coding bootcamp students, focusing on full-stack development and modern web technologies.',
       achievements: [
-        'Reduced system latency by 40% through performance optimization',
-        'Led migration from monolithic to microservices architecture',
-        'Mentored 5 junior developers and established coding standards',
-        'Implemented CI/CD pipeline reducing deployment time by 60%'
+        'Led a cross-functional team to build a new React curriculum, replacing outdated single-page application content and enhancing existing JavaScript material for a smoother transition. By introducing ES6 and a more modern framework, student job placement rates increased by 20% with higher starting salaries.',
+        'Established curriculum versioning strategy and automated deployment process, bundling learning material from over 30 Git repositories into LMS and cohort repositories. Process handles consumer and enterprise product offerings and enables bootcamp to rapidly iterate and support over 500 concurrent students.',
+        'Designed module capstone project for students to demonstrate knowledge in client-server REST API applications and SQL databases, resulting in increased module graduation rate and student confidence.',
+        'Built automated testing and scoring process using custom Docker images to test student labs with MSTest, JUnit, Cypress, Mocha, and Vitest unit tests, enabling instructors to have more time for individual student engagement.',
+        'Rolled out custom serverless functions with Express.js acting as read-only RESTful APIs, leading to better student understanding of real-world APIs by using non-local servers for lab exercises.'
       ],
-      technologies: ['React', 'Node.js', 'AWS', 'Docker', 'Kubernetes', 'PostgreSQL']
+      technologies: ['C#', 'Java', 'ASP.NET', 'Spring Boot', 'MSTest', 'JUnit', 'SQL Server', 'PostgreSQL', 'HTML/CSS/JS', 'Vue.js', 'React', 'Docker', 'Git'],
+      links: [
+        {
+          label: 'Tech Elevator APIs',
+          url: 'https://teapi.netlify.app/'
+        }
+      ]
     },
     {
-      title: 'Lead Developer',
-      company: 'InnovateTech',
-      location: 'Austin, TX',
-      period: '2017 - 2020',
-      description: 'Spearheaded development of cloud-native applications and led a team of 8 developers. Delivered multiple high-impact projects on time and budget.',
+      title: 'Web Developer',
+      company: 'Bry\'s Marine',
+      location: 'Remote',
+      period: 'Oct 2019 - Dec 2019',
+      description: 'Modernized company website with more professional look and feel and product photos.',
       achievements: [
-        'Built scalable e-commerce platform processing $50M+ annually',
-        'Implemented real-time analytics dashboard for business intelligence',
-        'Reduced infrastructure costs by 35% through cloud optimization',
-        'Established agile development practices across the organization'
+        'Redesigned company website with lightweight CMS to improve SEO and user experience, resulting in 15% more sales over the previous year.'
       ],
-      technologies: ['Vue.js', 'Python', 'Django', 'MongoDB', 'Redis', 'AWS']
+      technologies: ['Grav CMS', 'PHP/Twig', 'jQuery', 'HTML/CSS/JS', 'DreamHost', 'Cloudinary', 'Git'],
+      links: [
+        {
+          label: "Bry's Marine",
+          url: 'https://www.brysmarine.com'
+        }
+      ]
     },
     {
-      title: 'Full-Stack Developer',
-      company: 'StartupHub',
-      location: 'Seattle, WA',
-      period: '2014 - 2017',
-      description: 'Developed innovative web applications and mobile solutions. Contributed to rapid prototyping and MVP development for multiple startups.',
+      title: 'Lead Software Engineer / Software Engineer',
+      company: 'Traffic Safety Store',
+      location: 'Hybrid / Philadelphia, PA',
+      period: 'Jul 2016 - Sep 2019',
+      description: 'Developed and maintained e-commerce websites and admin site for traffic safety products.',
       achievements: [
-        'Developed 15+ MVP applications for various startup clients',
-        'Created reusable component library used across 8 projects',
-        'Implemented automated testing achieving 90% code coverage',
-        'Optimized database queries improving performance by 50%'
+        'Co-led team of four in launching new e-commerce admin site using ASP.NET, Razor, and React, achieving goals of unified logins, access to online & phone orders, and quickly toggling on-sale/out-of-stock for products on all storefronts.',
+        'Deployed new interface for roll-up signs with legend search using React, JavaScript, and ASP.NET, boosting sales of high-volume signs and enabling company to sell more than 200 new legends.',
+        'Enhanced product category layout with live search and filtering capabilities with JavaScript, Elasticsearch, and ASP.NET, increasing conversion rates by more than 30% over previous versions in A/B tests.',
+        'Delivered interactive sign designer using JavaScript and Cloudinary APIs, generating more than $30,000 of additional e-commerce sales and higher conversion rates compared to previous version in A/B tests.'
       ],
-      technologies: ['Angular', 'Java', 'Spring Boot', 'MySQL', 'Docker', 'Jenkins']
+      technologies: ['ASP.NET (C# MVC)', 'SQL', 'React', 'jQuery', 'HTML/CSS/JS', 'Microsoft SQL Server', 'Elasticsearch', 'FluentMigrator', 'Git'],
+      links: [
+        {
+          label: 'Roll-up Signs',
+          url: 'https://www.trafficsafetystore.com/traffic-signs/roll-up-48'
+        },
+        {
+          label: 'Safety Vests',
+          url: 'https://www.trafficsafetystore.com/safety-vests'
+        },
+        {
+          label: 'Sign Designer',
+          url: 'https://www.trafficsafetystore.com/Product/Customization?ProductOptionID=4664'
+        }
+      ]
     },
     {
-      title: 'Software Engineer',
-      company: 'Enterprise Systems',
-      location: 'Boston, MA',
-      period: '2010 - 2014',
-      description: 'Built enterprise software solutions and internal tools. Collaborated with cross-functional teams to deliver business-critical applications.',
+      title: 'IT Applications Developer',
+      company: 'Dechert LLP',
+      location: 'Philadelphia, PA',
+      period: 'Jan 2011 - Jul 2016',
+      description: 'Developed enterprise applications for law firm operations, focusing on document management and internal systems.',
       achievements: [
-        'Developed internal CRM system used by 500+ employees',
-        'Created automated reporting system saving 20 hours/week',
-        'Implemented security best practices across all applications',
-        'Contributed to open-source projects and technical documentation'
+        'Architected and developed ethical screen management system, automatically applying access lists to secure iManage digital documents and workspaces, saving application support and general counsel teams more than 20 hours/week.',
+        'Implemented dynamic internal skills & experience tracking application using ASP.NET, CSS, and Photoshop mockups, saving law firm over $25,000 annually by leveraging internal resources over external resources.'
       ],
-      technologies: ['C#', '.NET', 'SQL Server', 'JavaScript', 'HTML/CSS', 'Git']
+      technologies: ['ASP.NET (VB Web Forms, C# MVC)', 'SQL', 'HTML/CSS/JS', 'jQuery', 'Microsoft SQL Server', 'SSRS', 'SSIS', 'iManage', 'Git']
     },
     {
-      title: 'Junior Developer',
-      company: 'Digital Solutions',
-      location: 'Chicago, IL',
-      period: '2005 - 2010',
-      description: 'Started career building web applications and learning modern development practices. Contributed to various client projects and internal tools.',
+      title: 'Associate Software Engineer',
+      company: 'Coventry First',
+      location: 'Fort Washington, PA',
+      period: 'Feb 2010 - Jan 2011',
       achievements: [
-        'Built 20+ client websites and web applications',
-        'Learned multiple programming languages and frameworks',
-        'Contributed to team code reviews and documentation',
-        'Participated in hackathons and developer meetups'
+        'Improved key systems of Contract Analysis department with enhancements to ASP.NET application and SQL databases, enabling more efficient data captur and boosting analyst productivity resulting in 20% reduction in daily backlog.'
       ],
-      technologies: ['PHP', 'JavaScript', 'MySQL', 'HTML/CSS', 'Linux', 'Apache']
+      technologies: ['ASP.NET (VB Web Forms)', 'VB.NET WinForms', 'SQL', 'HTML/CSS/JS', 'Microsoft SQL Server']
+    },
+    {
+      title: 'Applications Developer',
+      company: 'Capmark Financial Group, Inc.',
+      location: 'Horsham, PA',
+      period: 'Jan 2007 - Feb 2010',
+      achievements: [
+        'Upgraded major finance applications to ASP.NET 2.0 and SQL Server 2008, implementing new features from business requirements and integrating with iManage document management systems.'
+      ],
+      technologies: ['ASP.NET (VB Web Forms)', 'HTML/CSS/JS', 'SQL', 'Microsoft SQL Server', 'iManage']
+    },
+    {
+      title: '.NET Developer',
+      company: 'School of Tourism & Hospitality Management, Temple University',
+      location: 'Philadelphia, PA',
+      period: 'Jun 2006 - Jan 2007',
+      achievements: [
+        'Created ASP.NET web applications demonstrating and sharing knowledge for hospitality management professionals, leading to better information sharing among remote users.'
+      ],
+      technologies: ['ASP.NET (VB Web Forms)', 'Classic ASP', 'HTML', 'SQL', 'Microsoft SQL Server']
     }
   ]
 
