@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Linkedin, Github, Code } from 'lucide-react'
+import React, { useState } from 'react'
 
 const Contact = () => {
   // const contactInfo = [
@@ -46,6 +47,50 @@ const Contact = () => {
     }
   ]
 
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    subject: '',
+    message: ''
+  })
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [errorMsg, setErrorMsg] = useState('')
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setStatus('submitting')
+    setErrorMsg('')
+    try {
+      const response = await fetch('https://formspree.io/f/xzzvdnde', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+      const data = await response.json()
+      if (response.ok) {
+        setStatus('success')
+        setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '' })
+      } else {
+        setStatus('error')
+        setErrorMsg(data?.errors?.[0]?.message || 'Something went wrong. Please try again.')
+      }
+    } catch (err) {
+      setStatus('error')
+      setErrorMsg('Something went wrong. Please try again.')
+    }
+  }
+
   return (
     <section id="contact" className="section-padding bg-white dark:bg-dark-900">
       <div className="container-max">
@@ -76,78 +121,110 @@ const Contact = () => {
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Send a Message
             </h3>
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {status === 'success' ? (
+              <div className="p-6 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-lg text-center">
+                Thank you for reaching out! Your message has been sent.
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      First Name
+                    </label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white"
+                      placeholder="John"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      disabled={status === 'submitting'}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                      Last Name
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white"
+                      placeholder="Doe"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      disabled={status === 'submitting'}
+                      required
+                    />
+                  </div>
+                </div>
                 <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    First Name
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Email
                   </label>
                   <input
-                    type="text"
-                    id="firstName"
-                    name="firstName"
+                    type="email"
+                    id="email"
+                    name="email"
                     className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white"
-                    placeholder="John"
+                    placeholder="john@example.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    disabled={status === 'submitting'}
+                    required
                   />
                 </div>
                 <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Last Name
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Subject
                   </label>
                   <input
                     type="text"
-                    id="lastName"
-                    name="lastName"
+                    id="subject"
+                    name="subject"
                     className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white"
-                    placeholder="Doe"
+                    placeholder="Project Inquiry"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    disabled={status === 'submitting'}
+                    required
                   />
                 </div>
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white"
-                  placeholder="john@example.com"
-                />
-              </div>
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white"
-                  placeholder="Project Inquiry"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white resize-none"
-                  placeholder="Tell me about your project..."
-                />
-              </div>
-              <motion.button
-                type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-primary-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-primary-700 transition-colors"
-              >
-                Send Message
-              </motion.button>
-            </form>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={6}
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white resize-none"
+                    placeholder="Tell me about your project..."
+                    value={formData.message}
+                    onChange={handleChange}
+                    disabled={status === 'submitting'}
+                    required
+                  />
+                </div>
+                {status === 'error' && (
+                  <div className="p-4 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-lg text-center">
+                    {errorMsg}
+                  </div>
+                )}
+                <motion.button
+                  type="submit"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full bg-primary-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-primary-700 transition-colors"
+                  disabled={status === 'submitting'}
+                >
+                  {status === 'submitting' ? 'Sending...' : 'Send Message'}
+                </motion.button>
+              </form>
+            )}
           </motion.div>
 
           {/* Contact Information */}
