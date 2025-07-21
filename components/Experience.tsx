@@ -129,8 +129,7 @@ const Experience = () => {
             Professional Experience
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            A journey through 19 years of software development, from junior developer
-            to senior engineer, with a focus on delivering exceptional results.
+            A journey through 19+ years of software development with a focus on delivering exceptional results.
           </p>
         </motion.div>
 
@@ -180,6 +179,21 @@ const Experience = () => {
                   ))}
                 </ul>
               </div>
+
+              {experience.links && (
+                <div className="mb-4">
+                  <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
+                    Links:
+                  </h4>
+                  <ul className="list-disc list-inside space-y-1 text-sm text-gray-600 dark:text-gray-300">
+                    {experience.links.map((link, linkIndex) => (
+                      <li key={linkIndex}>
+                        <a href={link.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">{link.label}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               <div>
                 <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
