@@ -16,7 +16,7 @@ const Skills = () => {
       ]
     },
     {
-      title: 'Frameworks / Libraries',
+      title: 'Frameworks & Libraries',
       skills: [
         { name: 'ASP.NET', level: 95 },
         { name: 'React', level: 90 },

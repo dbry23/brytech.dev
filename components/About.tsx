@@ -1,39 +1,39 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Code, Database, Cloud, Users, Award, Clock } from 'lucide-react'
+import { Code, Database, ShieldCheck, Users, PencilRuler, Clock } from 'lucide-react'
 
 const About = () => {
   const highlights = [
     {
       icon: Clock,
       title: '19 Years Experience',
-      description: 'Extensive experience across multiple industries and technologies'
+      description: 'Proven track record across education, e-commerce, startup, and enterprise software'
     },
     {
       icon: Code,
       title: 'Full-Stack Development',
-      description: 'Expert in both frontend and backend development'
-    },
-    {
-      icon: Cloud,
-      title: 'Cloud Architecture',
-      description: 'Specialized in scalable cloud solutions and DevOps'
+      description: 'Expert in both frontend (React, JavaScript, HTML) and backend (C#, ASP.NET, SQL, Java, Spring Boot)'
     },
     {
       icon: Database,
       title: 'Database Design',
-      description: 'Proficient in SQL and NoSQL database systems'
+      description: 'Skilled in SQL Server, PostgreSQL, SQLite, and database optimization'
     },
     {
       icon: Users,
-      title: 'Team Leadership',
-      description: 'Led development teams and mentored junior developers'
+      title: 'Team Leadership & Mentoring',
+      description: 'Led teams, mentored developers, and developed coding curriculum'
     },
     {
-      icon: Award,
-      title: 'Problem Solver',
-      description: 'Delivered innovative solutions to complex business challenges'
+      icon: PencilRuler,
+      title: 'Technical Writing & Curriculum',
+      description: 'Created educational content and technical documentation for bootcamps and teams'
+    },
+    {
+      icon: ShieldCheck,
+      title: 'Testing & Quality',
+      description: 'Experience with MSTest, JUnit, Cypress, and best practices in software testing'
     }
   ]
 
@@ -51,8 +51,7 @@ const About = () => {
             About Me
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            A passionate software engineer with nearly two decades of experience building
-            innovative solutions that drive business success.
+            Full-stack software engineer with 19+ years of experience building scalable, maintainable solutions across education, e-commerce, startup, and enterprise sectors that drive real impact.
           </p>
         </motion.div>
 
@@ -69,22 +68,13 @@ const About = () => {
             </h3>
             <div className="space-y-4 text-gray-600 dark:text-gray-300">
               <p>
-                With 19 years of experience in software development, I've had the privilege
-                of working on diverse projects that have shaped my expertise across the
-                entire technology stack. From early-stage startups to enterprise-level
-                applications, I've consistently delivered solutions that exceed expectations.
+                Over nearly two decades, I've engineered enterprise and e-commerce platforms, created effective learning material for coding bootcamps, and guided teams to success. My technical toolkit spans C#, JavaScript, SQL, ASP.NET, Java, Spring Boot, React, Docker, and more, with a proven record in both backend and frontend development.
               </p>
               <p>
-                My passion lies in creating scalable, maintainable code that not only
-                solves immediate problems but also anticipates future needs. I specialize
-                in modern web technologies, cloud architecture, and building robust
-                systems that can handle the demands of growing businesses.
+                Notable achievements include boosting student job placement rates by 20% through modernized curriculum, automating CI/CD pipelines for 500+ learners, increasing e-commerce conversion rates by over 30%, and saving companies thousands of dollars. I've architected novel and unique systems that save teams hundreds of hours and delivered solutions that scale with business growth.
               </p>
               <p>
-                Beyond technical skills, I believe in the power of collaboration and
-                knowledge sharing. I've mentored numerous developers throughout my career
-                and enjoy contributing to the broader tech community through open-source
-                projects and technical writing.
+                Beyond code, I'm dedicated to mentoring developers, leading cross-functional teams, and sharing knowledge through technical writing and open-source contributions. I believe in continuous learning, agile collaboration, and building software that empowers people and organizations.
               </p>
             </div>
           </motion.div>
