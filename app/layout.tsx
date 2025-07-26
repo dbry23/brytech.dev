@@ -6,10 +6,14 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'BryTech - Software Engineer Portfolio',
-  description: 'Senior Software Engineer with 19 years of experience in full-stack development, cloud architecture, and innovative software solutions.',
-  keywords: ['software engineer', 'full-stack developer', 'cloud architecture', 'web development', 'mobile development'],
-  authors: [{ name: 'BryTech' }],
+  description: 'Senior Software Engineer with 19 years of experience in full-stack development, software architecture, and innovative technical solutions.',
+  keywords: ['software engineer', 'full-stack developer', 'software architecture', 'web development', 'curriculum development', 'technical writing', 'mentoring', 'team leadership', 'e-commerce', 'enterprise software', 'startup', 'software development', 'software engineering'],
+  authors: [{ name: 'Dave Bry' }],
   robots: 'index, follow',
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+  },
 }
 
 export const viewport: Viewport = {
