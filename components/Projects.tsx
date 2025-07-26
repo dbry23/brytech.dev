@@ -6,59 +6,50 @@ import { ExternalLink, Github, Globe } from 'lucide-react'
 const Projects = () => {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with real-time inventory management, payment processing, and analytics dashboard.',
-      image: '/api/placeholder/400/250',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Redis', 'AWS'],
-      liveUrl: '#',
-      githubUrl: '#',
+      title: 'Pick For Me TV',
+      description: 'Developed website to pick a random episode from a user-defined list of TV shows. Utilized TMDB (The Movie Database) REST API, Vue.js front end, and Express.js back end.',
+      image: '/projects/pick-for-me-tv.gif',
+      technologies: ['Vue.js', 'Express.js', 'REST API', 'TMDB'],
+      liveUrl: 'https://pickforme.tv',
+      repoUrl: null,
       featured: true
     },
     {
-      title: 'Real-Time Chat Application',
-      description: 'WebSocket-based chat application with file sharing, user authentication, and message encryption.',
-      image: '/api/placeholder/400/250',
-      technologies: ['Vue.js', 'Socket.io', 'MongoDB', 'JWT', 'Docker'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: true
-    },
-    {
-      title: 'Task Management System',
-      description: 'Collaborative project management tool with real-time updates, task assignment, and progress tracking.',
-      image: '/api/placeholder/400/250',
-      technologies: ['Angular', 'Express.js', 'MySQL', 'Socket.io', 'JWT'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false
-    },
-    {
-      title: 'Weather Dashboard',
-      description: 'Interactive weather application with location-based forecasts, historical data, and customizable widgets.',
-      image: '/api/placeholder/400/250',
-      technologies: ['React', 'TypeScript', 'OpenWeather API', 'Chart.js', 'PWA'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false
-    },
-    {
-      title: 'Portfolio Website',
+      title: 'BryTech',
       description: 'Modern, responsive portfolio website built with Next.js and Tailwind CSS, featuring dark mode and animations.',
-      image: '/api/placeholder/400/250',
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-      liveUrl: '#',
-      githubUrl: '#',
+      image: '/projects/brytech.gif',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Cursor AI'],
+      liveUrl: 'https://www.brytech.dev',
+      repoUrl: null,
+      featured: true
+    },
+    {
+      title: "Bry's Marine website",
+      description: 'Redesigned company website with lightweight CMS to improve SEO and user experience, resulting in 15% more sales over the previous year.',
+      image: '/projects/brys-marine.png',
+      technologies: ['Grav CMS', 'PHP/Twig', 'jQuery', 'HTML/CSS/JS', 'DreamHost', 'Cloudinary'],
+      liveUrl: 'https://www.brysmarine.com',
+      repoUrl: null,
+      featured: true
+    },
+    {
+      title: 'Traffic Safety Store - Sign Gallery',
+      description: 'Deployed new interface for roll-up signs with legend search using React, JavaScript, and ASP.NET, boosting sales of high-volume signs and enabling company to sell more than 200 new legends.',
+      image: '/projects/traffic-safety-store-sign-gallery.gif',
+      technologies: ['ASP.NET (C# MVC)', 'React', 'HTML/CSS/JS', 'Entity Framework'],
+      liveUrl: 'https://www.trafficsafetystore.com/traffic-signs/roll-up-48',
+      repoUrl: null,
       featured: false
     },
     {
-      title: 'API Gateway Service',
-      description: 'Microservices API gateway with rate limiting, authentication, and request routing capabilities.',
-      image: '/api/placeholder/400/250',
-      technologies: ['Go', 'Redis', 'Docker', 'Kubernetes', 'Prometheus'],
-      liveUrl: '#',
-      githubUrl: '#',
+      title: 'Traffic Safety Store - Sign Designer',
+      description: 'Delivered interactive sign designer using JavaScript and Cloudinary APIs. Generated more than $30,000 of additional e-commerce sales and higher conversion rates compared to previous version in A/B tests.',
+      image: '/projects/traffic-safety-store-sign-customization.gif',
+      technologies: ['ASP.NET (C# MVC)', 'jQuery', 'HTML/CSS/JS', 'Cloudinary'],
+      liveUrl: 'https://www.trafficsafetystore.com/product/customization?productoptionid=4625',
+      repoUrl: null,
       featured: false
-    }
+    },
   ]
 
   return (
@@ -93,11 +84,21 @@ const Projects = () => {
               }`}
             >
               <div className="relative">
-                <div className="w-full h-48 bg-gradient-to-br from-primary-100 to-blue-100 dark:from-primary-900 dark:to-blue-900 flex items-center justify-center">
-                  <span className="text-primary-600 dark:text-primary-400 font-medium">
-                    Project Preview
-                  </span>
-                </div>
+                {project.image ? (
+                  <div className="w-full h-48 overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={`${project.title} preview`}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-full h-48 bg-gradient-to-br from-primary-100 to-blue-100 dark:from-primary-900 dark:to-blue-900 flex items-center justify-center">
+                    <span className="text-primary-600 dark:text-primary-400 font-medium">
+                      Project Preview
+                    </span>
+                  </div>
+                )}
                 {project.featured && (
                   <div className="absolute top-4 left-4">
                     <span className="bg-primary-600 text-white px-2 py-1 rounded-full text-xs font-medium">
@@ -129,20 +130,28 @@ const Projects = () => {
                 </div>
 
                 <div className="flex gap-3">
-                  <a
-                    href={project.liveUrl}
-                    className="flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 text-sm font-medium transition-colors"
-                  >
-                    <Globe size={16} className="mr-1" />
-                    Live Demo
-                  </a>
-                  <a
-                    href={project.githubUrl}
-                    className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 text-sm font-medium transition-colors"
-                  >
-                    <Github size={16} className="mr-1" />
-                    Code
-                  </a>
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      className="flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 text-sm font-medium transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Globe size={16} className="mr-1" />
+                      Live Site
+                    </a>
+                  )}
+                  {project.repoUrl && (
+                    <a
+                      href={project.repoUrl}
+                      className="flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 text-sm font-medium transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github size={16} className="mr-1" />
+                      Code
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -150,7 +159,7 @@ const Projects = () => {
         </div>
 
         {/* Side Projects Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -212,7 +221,7 @@ const Projects = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   )
