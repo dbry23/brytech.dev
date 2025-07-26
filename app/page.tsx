@@ -7,7 +7,7 @@ import About from '@/components/About'
 import Skills from '@/components/Skills'
 import Experience from '@/components/Experience'
 import Projects from '@/components/Projects'
-import Accomplishments from '@/components/Accomplishments'
+// import Accomplishments from '@/components/Accomplishments'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
@@ -20,7 +20,7 @@ export default function Home() {
       <Skills />
       <Experience />
       <Projects />
-      <Accomplishments />
+      {/* <Accomplishments /> */}
       <Contact />
       <Footer />
     </main>
