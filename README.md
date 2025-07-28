@@ -1,18 +1,23 @@
-# BryTech Portfolio
+# BryTech Portfolio Website
 
 A modern, responsive portfolio website showcasing 19 years of software engineering experience. Built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
 
-## Features
+## 🚀 Live Demo
+
+Visit the live portfolio at: [brytech.dev](https://brytech.dev)
+
+## ✨ Features
 
 - 🎨 **Modern Design**: Clean, professional design with dark mode support
-- 📱 **Responsive**: Fully responsive across all devices
-- ⚡ **Performance**: Optimized for speed and SEO
-- 🎭 **Animations**: Smooth animations using Framer Motion
-- 🌙 **Dark Mode**: Toggle between light and dark themes
-- 📧 **Contact Form**: Functional contact form for inquiries
-- 🚀 **Fast**: Built with Next.js for optimal performance
+- 📱 **Fully Responsive**: Optimized for all devices and screen sizes
+- ⚡ **Performance Optimized**: Built with Next.js for optimal speed and SEO
+- 🎭 **Smooth Animations**: Engaging animations using Framer Motion
+- 🌙 **Dark/Light Mode**: Toggle between themes with persistent preference
+- 📧 **Contact Form**: Functional contact form integrated with Formspree
+- 🔍 **SEO Optimized**: Meta tags, structured data, and performance metrics
+- ♿ **Accessible**: WCAG compliant with proper semantic HTML
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 - **Framework**: Next.js 14 with App Router
 - **Language**: TypeScript
@@ -20,8 +25,36 @@ A modern, responsive portfolio website showcasing 19 years of software engineeri
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
 - **Fonts**: Inter (Google Fonts)
+- **Deployment**: Vercel
+- **Form Handling**: Formspree
 
-## Getting Started
+## 📁 Project Structure
+
+```
+brytech.dev/
+├── app/                   # Next.js app directory
+│   ├── globals.css        # Global styles and Tailwind imports
+│   ├── layout.tsx         # Root layout with metadata
+│   └── page.tsx           # Home page component
+├── components/            # React components
+│   ├── Header.tsx         # Navigation with theme toggle
+│   ├── Hero.tsx           # Hero section with CTA
+│   ├── About.tsx          # About section with bio
+│   ├── Skills.tsx         # Skills showcase with icons
+│   ├── Experience.tsx     # Work experience timeline
+│   ├── Projects.tsx       # Portfolio projects grid
+│   ├── Contact.tsx        # Contact form and social links
+│   └── Footer.tsx         # Footer with links
+├── public/                # Static assets
+│   ├── projects/          # Project screenshots and GIFs
+│   └── favicon.png        # Site favicon
+├── tailwind.config.js     # Tailwind configuration
+├── next.config.js         # Next.js configuration
+├── tsconfig.json          # TypeScript configuration
+└── package.json           # Dependencies and scripts
+```
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -32,93 +65,69 @@ A modern, responsive portfolio website showcasing 19 years of software engineeri
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/brytech-portfolio.git
-cd brytech-portfolio
+git clone https://github.com/dbry23/brytech.dev.git
+cd brytech.dev
 ```
 
 2. Install dependencies:
 ```bash
 npm install
-# or
-yarn install
 ```
 
-3. Run the development server:
+3. Set up environment variables:
+```bash
+# Copy the example environment file
+cp .env.example .env.local
+# Edit .env.local with your actual Formspree form ID
+```
+
+4. Run the development server:
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Project Structure
-
-```
-brytech-portfolio/
-├── app/                    # Next.js app directory
-│   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Home page
-├── components/            # React components
-│   ├── Header.tsx         # Navigation header
-│   ├── Hero.tsx           # Hero section
-│   ├── About.tsx          # About section
-│   ├── Skills.tsx         # Skills showcase
-│   ├── Experience.tsx     # Work experience
-│   ├── Projects.tsx       # Portfolio projects
-│   ├── Accomplishments.tsx # Achievements
-│   ├── Contact.tsx        # Contact form
-│   └── Footer.tsx         # Footer
-├── public/                # Static assets
-├── tailwind.config.js     # Tailwind configuration
-├── next.config.js         # Next.js configuration
-├── tsconfig.json          # TypeScript configuration
-└── package.json           # Dependencies
-```
-
-## Customization
+## 🔧 Customization
 
 ### Personal Information
 
-Update the following files to customize your portfolio:
+Update the following components to customize your portfolio:
 
-1. **Contact Information**: Edit `components/Contact.tsx`
-2. **Experience**: Modify `components/Experience.tsx`
-3. **Projects**: Update `components/Projects.tsx`
-4. **Skills**: Adjust `components/Skills.tsx`
-5. **About**: Customize `components/About.tsx`
+- **Contact Information**: Edit `components/Contact.tsx`
+- **Experience**: Modify `components/Experience.tsx`
+- **Projects**: Update `components/Projects.tsx`
+- **Skills**: Adjust `components/Skills.tsx`
+- **About**: Customize `components/About.tsx`
 
 ### Styling
 
 - **Colors**: Modify the color palette in `tailwind.config.js`
 - **Fonts**: Update font families in `tailwind.config.js`
-- **Animations**: Adjust animation settings in `tailwind.config.js`
+- **Animations**: Adjust animation settings in individual components
 
 ### Content
 
 - **Hero Section**: Update the main headline and description in `components/Hero.tsx`
 - **Meta Tags**: Modify SEO information in `app/layout.tsx`
-- **Social Links**: Update social media links in `components/Contact.tsx` and `components/Footer.tsx`
+- **Social Links**: Update social media links in `components/Contact.tsx`
 
-## Deployment
+## 🌐 Deployment
 
 ### Vercel (Recommended)
 
 1. Push your code to GitHub
 2. Connect your repository to Vercel
-3. Deploy automatically
+3. Add environment variables in Vercel dashboard
+4. Deploy automatically
 
-### Other Platforms
+### Environment Variables
 
-The site can be deployed to any platform that supports Next.js:
+Set the following environment variable in your deployment platform:
 
-- Netlify
-- AWS Amplify
-- DigitalOcean App Platform
-- Railway
+- `NEXT_PUBLIC_FORMSPREE_FORM_ID`: Your Formspree form ID
 
-## Performance
+## 📊 Performance
 
 This portfolio is optimized for performance with:
 
@@ -126,34 +135,36 @@ This portfolio is optimized for performance with:
 - Tailwind CSS for minimal CSS bundle
 - Framer Motion for efficient animations
 - Optimized images and assets
-- SEO-friendly structure
+- SEO-friendly structure with meta tags
+- Lighthouse score: 95+ across all metrics
 
-## Browser Support
+## 🌍 Browser Support
 
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
 
-## Contributing
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## License
+## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## Contact
+## 📞 Contact
 
-For questions or support, please reach out:
+David Bry - [dave@brytech.dev](mailto:dave@brytech.dev)
 
-- Email: hello@brytech.dev
-- LinkedIn: [linkedin.com/in/brytech](https://linkedin.com/in/brytech)
-- GitHub: [github.com/brytech](https://github.com/brytech)
+Project Link: [https://github.com/dbry23/brytech.dev](https://github.com/dbry23/brytech.dev)
 
 ---
 
-Built with ❤️ using Next.js and Tailwind CSS
+⭐ If you found this portfolio template helpful, please give it a star!

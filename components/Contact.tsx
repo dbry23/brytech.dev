@@ -69,7 +69,7 @@ const Contact = () => {
     setStatus('submitting')
     setErrorMsg('')
     try {
-      const response = await fetch('https://formspree.io/f/xzzvdnde', {
+      const response = await fetch(`https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID}`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
