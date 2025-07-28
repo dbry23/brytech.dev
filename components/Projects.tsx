@@ -16,11 +16,11 @@ const Projects = () => {
     },
     {
       title: 'BryTech',
-      description: 'Modern, responsive portfolio website built with Next.js and Tailwind CSS, featuring dark mode and animations.',
+      description: "An experiment in vibe coding. Modern, responsive portfolio website built with Next.js and Tailwind CSS, featuring dark mode and animations. Less than 10% of the code written by a human.",
       image: '/projects/brytech.gif',
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Cursor AI'],
+      technologies: ['Cursor AI', 'Vibe Coding', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion',  'Vercel'],
       liveUrl: 'https://www.brytech.dev',
-      repoUrl: null,
+      repoUrl: 'https://github.com/dbry23/brytech.dev',
       featured: true
     },
     {
