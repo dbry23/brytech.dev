@@ -12,8 +12,8 @@ const Experience = () => {
       period: 'Jan 2020 - Present',
       description: 'Designing and developing educational content for coding bootcamp students, focusing on full-stack development and modern web technologies.',
       achievements: [
-        'Led a cross-functional team to build a new React curriculum, replacing outdated single-page application content and enhancing existing JavaScript material for a smoother transition. By introducing ES6 and a more modern framework, student job placement rates increased by 20% with higher starting salaries.',
-        'Established curriculum versioning strategy and automated deployment process, bundling learning material from over 30 Git repositories into LMS and cohort repositories. Process handles consumer and enterprise product offerings and enables bootcamp to rapidly iterate and support over 500 concurrent students.',
+        'Led cross-functional team to build new React curriculum, replacing outdated single-page application content and enhancing existing web material for a smoother transition. By introducing ES6, responsive web design, and a modern framework, student job placement rates increased by 20% with higher starting salaries.',
+        'Established curriculum versioning strategy and automated CI/CD process, bundling learning material from over 30 Git repositories into LMS and cohort repositories. Process handles consumer and enterprise product offerings and enables bootcamp to rapidly iterate and support over 500 concurrent students.',
         'Designed module capstone project for students to demonstrate knowledge in client-server REST API applications and SQL databases, resulting in increased module graduation rate and student confidence.',
         'Built automated testing and scoring process using custom Docker images to test student labs with MSTest, JUnit, Cypress, Mocha, and Vitest unit tests, enabling instructors to have more time for individual student engagement.',
         'Rolled out custom serverless functions with Express.js acting as read-only RESTful APIs, leading to better student understanding of real-world APIs by using non-local servers for lab exercises.'
@@ -51,7 +51,7 @@ const Experience = () => {
       description: 'Developed and maintained e-commerce websites and admin site for traffic safety products.',
       achievements: [
         'Co-led team of four in launching new e-commerce admin site using ASP.NET, Razor, and React, achieving goals of unified logins, access to online & phone orders, and quickly toggling on-sale/out-of-stock for products on all storefronts.',
-        'Deployed new interface for roll-up signs with legend search using React, JavaScript, and ASP.NET, boosting sales of high-volume signs and enabling company to sell more than 200 new legends.',
+        'Deployed new responsive web design interface for signs with legend search using React, JavaScript, and ASP.NET, boosting sales of high-volume signs and enabling company to sell more than 200 new legends.',
         'Enhanced product category layout with live search and filtering capabilities with JavaScript, Elasticsearch, and ASP.NET, increasing conversion rates by more than 30% over previous versions in A/B tests.',
         'Delivered interactive sign designer using JavaScript and Cloudinary APIs, generating more than $30,000 of additional e-commerce sales and higher conversion rates compared to previous version in A/B tests.'
       ],

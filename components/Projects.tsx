@@ -16,9 +16,9 @@ const Projects = () => {
     },
     {
       title: 'BryTech',
-      description: "An experiment in vibe coding. Modern, responsive portfolio website built with Next.js and Tailwind CSS, featuring dark mode and animations. Less than 10% of the code written by a human.",
+      description: "An experiment in AI-assisted vibe coding. Modern, responsive portfolio website built with Next.js and Tailwind CSS, featuring dark mode and animations. Learned about Vercel platform and its CI/CD tools.",
       image: '/projects/brytech.gif',
-      technologies: ['Cursor AI', 'Vibe Coding', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion',  'Vercel'],
+      technologies: ['Cursor AI', 'Vibe Coding', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
       liveUrl: 'https://www.brytech.dev',
       repoUrl: 'https://github.com/dbry23/brytech.dev',
       featured: true
