@@ -21,7 +21,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-6"
+            className="mb-6 max-lg:mt-6"
           >
             <div className="flex flex-wrap justify-center gap-3 mb-4">
               <span className="inline-block px-4 py-2 rounded-full bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200 text-sm font-medium">
