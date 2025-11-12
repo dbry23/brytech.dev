@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Heart } from 'lucide-react'
 
@@ -13,10 +14,15 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-primary-600 to-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">B</span>
+              <div className="w-40 h-12 relative rounded-lg overflow-hidden">
+                <Image
+                  src="/logo-text-light.png"
+                  alt="BryTech logo"
+                  fill
+                  sizes="256px"
+                  className="object-cover"
+                />
               </div>
-              <span className="text-xl font-bold">BryTech</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
               Senior software engineer with 19 years of experience building innovative

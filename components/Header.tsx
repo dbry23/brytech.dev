@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Menu, X, Sun, Moon } from 'lucide-react'
 
@@ -41,14 +42,16 @@ const Header = () => {
       <div className="container-max px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-2"
-          >
-            <div className="w-8 h-8 bg-gradient-to-r from-primary-600 to-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">B</span>
+          <motion.div whileHover={{ scale: 1.05 }} className="flex items-center space-x-2">
+            <div className="w-40 h-12 relative rounded-lg overflow-hidden">
+              <Image
+                src={isDark ? '/logo-text-light.png' : '/logo-text-dark.png'}
+                alt="BryTech logo"
+                fill
+                sizes="256px"
+                className="object-cover"
+              />
             </div>
-            <span className="text-xl font-bold gradient-text">BryTech</span>
           </motion.div>
 
           {/* Desktop Navigation */}
