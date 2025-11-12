@@ -104,10 +104,10 @@ const Contact = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Get In Touch
           </h2>
-          {/* <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             I'm always interested in new opportunities and exciting projects.
             Let's discuss how we can work together to bring your ideas to life.
-          </p> */}
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -281,14 +281,14 @@ const Contact = () => {
             </div>
 
             {/* Availability */}
-            {/* <div className="mt-8 p-6 bg-gray-50 dark:bg-dark-800 rounded-lg">
+            <div className="mt-8 p-6 bg-gray-50 dark:bg-dark-800 rounded-lg">
               <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                 Availability
               </h4>
-              <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
+              <p className="text-md text-gray-600 dark:text-gray-300 mb-3">
                 I'm currently available for:
               </p>
-              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+              <ul className="space-y-2 text-md text-gray-600 dark:text-gray-300">
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
                   Full-time opportunities
@@ -306,7 +306,7 @@ const Contact = () => {
                   Technical mentoring
                 </li>
               </ul>
-            </div> */}
+            </div>
           </motion.div>
         </div>
       </div>
