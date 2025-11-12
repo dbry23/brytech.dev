@@ -3,12 +3,15 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from '@vercel/analytics/react'
+import calculateYearsExperience from '@/components/YearsExperience/CalculateYearsExperience'
 
 const inter = Inter({ subsets: ['latin'] })
 
+const yearsOfExperience: number = calculateYearsExperience()
+
 export const metadata: Metadata = {
   title: 'BryTech - Software Engineer Portfolio',
-  description: 'Senior Software Engineer with 19 years of experience in full-stack development, software architecture, and innovative technical solutions.',
+  description: `Senior Software Engineer with ${yearsOfExperience} years of experience in full-stack development, software architecture, and innovative technical solutions.`,
   keywords: ['software engineer', 'full-stack developer', 'software architecture', 'web development', 'curriculum development', 'technical writing', 'mentoring', 'team leadership', 'e-commerce', 'enterprise software', 'startup', 'software development', 'software engineering'],
   authors: [{ name: 'Dave Bry' }],
   robots: 'index, follow',

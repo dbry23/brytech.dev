@@ -1,8 +1,11 @@
 'use client'
 
+import { useContext } from 'react'
+import { YearsExperienceContext } from './YearsExperience/YearsExperienceContext'
 import { motion } from 'framer-motion'
 
 const Skills = () => {
+  const yearsOfExperience = useContext(YearsExperienceContext)
   const skillCategories = [
     {
       title: 'Programming Languages',
@@ -73,7 +76,7 @@ const Skills = () => {
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             A comprehensive toolkit of languages, frameworks, and platforms I've mastered
-            over 19 years of software development.
+            over {yearsOfExperience} years of software development.
           </p>
         </motion.div>
 

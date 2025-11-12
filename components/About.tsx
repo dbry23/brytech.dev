@@ -1,13 +1,16 @@
 'use client'
 
+import { useContext } from 'react'
+import { YearsExperienceContext } from './YearsExperience/YearsExperienceContext'
 import { motion } from 'framer-motion'
 import { Code, Database, ShieldCheck, Users, PencilRuler, Clock } from 'lucide-react'
 
 const About = () => {
+  const yearsOfExperience = useContext(YearsExperienceContext)
   const highlights = [
     {
       icon: Clock,
-      title: '19 Years Experience',
+      title: `${yearsOfExperience} Years Experience`,
       description: 'Proven track record across education, e-commerce, startup, and enterprise software'
     },
     {
@@ -51,7 +54,7 @@ const About = () => {
             About Me
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Full-stack software engineer with 19+ years of experience building scalable, maintainable solutions across education, e-commerce, startup, and enterprise sectors that drive real impact.
+            Full-stack software engineer with {yearsOfExperience}+ years of experience building scalable, maintainable solutions across education, e-commerce, startup, and enterprise sectors that drive real impact.
           </p>
         </motion.div>
 

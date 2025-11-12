@@ -1,9 +1,12 @@
 'use client'
 
+import { useContext } from 'react'
+import { YearsExperienceContext } from './YearsExperience/YearsExperienceContext'
 import { motion } from 'framer-motion'
 import { Calendar, MapPin, Building } from 'lucide-react'
 
 const Experience = () => {
+  const yearsOfExperience = useContext(YearsExperienceContext)
   const experiences = [
     {
       title: 'Curriculum Developer',
@@ -129,7 +132,7 @@ const Experience = () => {
             Professional Experience
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            A journey through 19+ years of software development with a focus on delivering exceptional results.
+            A journey through {yearsOfExperience}+ years of software development with a focus on delivering exceptional results.
           </p>
         </motion.div>
 

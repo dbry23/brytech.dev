@@ -1,10 +1,13 @@
 'use client'
 
+import { useContext } from 'react'
+import { YearsExperienceContext } from './YearsExperience/YearsExperienceContext'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Heart } from 'lucide-react'
 
 const Footer = () => {
+  const yearsOfExperience = useContext(YearsExperienceContext)
   const currentYear = new Date().getFullYear()
 
   return (
@@ -25,7 +28,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              Senior software engineer with 19 years of experience building innovative
+              Senior software engineer with {yearsOfExperience} years of experience building innovative
               solutions that drive business success and user satisfaction.
             </p>
             <div className="flex space-x-4">
