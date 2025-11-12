@@ -30,7 +30,7 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/dbry23/',
+      href: 'https://www.linkedin.com/in/dave-bry',
       color: 'hover:text-blue-600'
     },
     {
