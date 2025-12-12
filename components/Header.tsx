@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Menu, X, Sun, Moon } from 'lucide-react'
 
@@ -44,13 +45,15 @@ const Header = () => {
           {/* Logo */}
           <motion.div whileHover={{ scale: 1.05 }} className="flex items-center space-x-2">
             <div className="w-40 h-12 relative rounded-lg overflow-hidden">
-              <Image
-                src={isDark ? '/logo-text-light.png' : '/logo-text-dark.png'}
-                alt="BryTech logo"
-                fill
-                sizes="256px"
-                className="object-cover"
-              />
+              <Link href="/">
+                <Image
+                  src={isDark ? '/logo-text-light.png' : '/logo-text-dark.png'}
+                  alt="BryTech logo"
+                  fill
+                  sizes="256px"
+                  className="object-cover"
+                />
+              </Link>
             </div>
           </motion.div>
 
