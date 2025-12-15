@@ -7,16 +7,16 @@ const Projects = () => {
   const projects = [
     {
       title: 'Pick For Me TV',
-      description: 'Developed website to pick a random episode from a user-defined list of TV shows. Utilized TMDB (The Movie Database) REST API, Vue.js front end, and Express.js back end.',
+      description: 'Built random TV episode picker using Vue.js, Express, and TMDB API to recreate the experience of stumbling onto favorite shows while channel surfing.',
       image: '/projects/pick-for-me-tv.gif',
-      technologies: ['Vue.js', 'Express.js', 'REST API', 'TMDB'],
+      technologies: ['Vue.js', 'Express', 'REST API', 'TMDB'],
       liveUrl: 'https://pickforme.tv',
       repoUrl: null,
       featured: true
     },
     {
       title: 'BryTech',
-      description: "An experiment in AI-assisted coding. Modern, responsive portfolio website built with Next.js and Tailwind CSS, featuring dark mode and animations. Learned about Vercel platform and its CI/CD tools.",
+      description: 'Built modern portfolio site using Cursor AI, Next.js/Tailwind CSS, and Vercel deployments, learning AI-assisted development workflows and TypeScript through iterative prompting and code review.',
       image: '/projects/brytech.gif',
       technologies: ['Cursor AI', 'AI-assisted', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
       liveUrl: 'https://www.brytech.dev',
@@ -25,7 +25,7 @@ const Projects = () => {
     },
     {
       title: "Bry's Marine website",
-      description: 'Redesigned company website with lightweight CMS to improve SEO and user experience, resulting in 15% more sales over the previous year.',
+      description: 'Rebuilt website with lightweight CMS, achieving 90+ Lighthouse scores in performance, best practices, and SEO.',
       image: '/projects/brys-marine.png',
       technologies: ['Grav CMS', 'PHP/Twig', 'jQuery', 'HTML/CSS/JS', 'DreamHost', 'Cloudinary'],
       liveUrl: 'https://www.brysmarine.com',
@@ -33,19 +33,19 @@ const Projects = () => {
       featured: true
     },
     {
-      title: 'Traffic Safety Store - Sign Gallery',
-      description: 'Deployed new interface for roll-up signs with legend search using React, JavaScript, and ASP.NET, boosting sales of high-volume signs and enabling company to sell more than 200 new legends.',
+      title: 'Traffic Safety Store - Construction Signs Gallery',
+      description: 'Implemented new interface for road construction signs using ASP.NET and React, expanding the product catalog to 200+ new signs and generating $150k+ in additional annual revenue.',
       image: '/projects/traffic-safety-store-sign-gallery.gif',
-      technologies: ['ASP.NET (C# MVC)', 'React', 'HTML/CSS/JS', 'Entity Framework'],
+      technologies: ['ASP.NET', 'React', 'HTML/CSS/JS', 'Entity Framework'],
       liveUrl: 'https://www.trafficsafetystore.com/traffic-signs/roll-up-48',
       repoUrl: null,
       featured: false
     },
     {
-      title: 'Traffic Safety Store - Sign Designer',
-      description: 'Delivered interactive sign designer using JavaScript and Cloudinary APIs. Generated more than $30,000 of additional e-commerce sales and higher conversion rates compared to previous version in A/B tests.',
+      title: 'Traffic Safety Store - Custom Sign Builder',
+      description: 'Built interactive custom sign builder with JavaScript and Cloudinary, driving $60k+ in new revenue within six months and significantly improving conversion rates in A/B tests.',
       image: '/projects/traffic-safety-store-sign-customization.gif',
-      technologies: ['ASP.NET (C# MVC)', 'jQuery', 'HTML/CSS/JS', 'Cloudinary'],
+      technologies: ['ASP.NET', 'jQuery', 'HTML/CSS/JS', 'Cloudinary'],
       liveUrl: 'https://www.trafficsafetystore.com/product/customization?productoptionid=4625',
       repoUrl: null,
       featured: false

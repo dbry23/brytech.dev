@@ -9,34 +9,36 @@ const Experience = () => {
   const yearsOfExperience = useContext(YearsExperienceContext)
   const experiences = [
     {
-      title: 'Curriculum Developer',
-      company: 'Tech Elevator / Stride',
+      title: 'Software Engineer & Curriculum Developer ',
+      company: 'Tech Elevator',
       location: 'Remote',
       period: 'Jan 2020 - Present',
-      description: 'Designing and developing educational content for coding bootcamp students, focusing on full-stack development and modern web technologies.',
+      description: 'Develop and maintain curriculum and software solutions for a coding bootcamp, focusing on backend development, DevOps, and automated testing to enhance student learning outcomes.',
       achievements: [
-        'Led cross-functional team to build new React curriculum, replacing outdated single-page application content and enhancing existing web material for a smoother transition. By introducing ES6, responsive web design, and a modern framework, student job placement rates increased by 20% with higher starting salaries.',
-        'Established curriculum versioning strategy and automated CI/CD process, bundling learning material from over 30 Git repositories into LMS and cohort repositories. Process handles consumer and enterprise product offerings and enables bootcamp to rapidly iterate and support over 500 concurrent students.',
-        'Designed module capstone project for students to demonstrate knowledge in client-server REST API applications and SQL databases, resulting in increased module graduation rate and student confidence.',
-        'Built automated testing and scoring process using custom Docker images to test student labs with MSTest, JUnit, Cypress, Mocha, and Vitest unit tests, enabling instructors to have more time for individual student engagement.',
-        'Rolled out custom serverless functions with Express.js acting as read-only RESTful APIs, leading to better student understanding of real-world APIs by using non-local servers for lab exercises.'
+        'Architected API and database capstone project modeled after Venmo, in dual tech stacks (C#/ASP.NET/SQL Server and Java/Spring/PostgreSQL), driving improved engagement and module completion rates for 2,000+ learners.',
+        'Designed automated CI/CD pipelines and curriculum versioning system that reduced deployment time from 3 days to 3 hours, enabling rapid curriculum iteration for 800+ concurrent students across multiple programs and start dates.',
+        'Built AI-assisted pipeline to generate and validate Check-For-Understanding questions, compressing an 8-month timeline to under 3 months while identifying and correcting errors in existing curriculum materials.',
+        'Engineered automated testing and scoring pipelines using custom Docker images and multiple testing frameworks, reducing per-instructor grading workload by 15+ hours per week and enabling more direct student support.',
+        'Implemented scalable Express-based APIs as teaching resources for lab exercises, giving learners hands-on experience consuming REST endpoints and working with distributed systems.',
+        'Developed React and ES6 curriculum modules to replace legacy Vue content, ensuring students learned modern industry-standard technologies.',
+        'Mentored junior developers through training, pair programming, and constructive code reviews, helping them build confidence and level up their skills.'
       ],
-      technologies: ['C#', 'Java', 'ASP.NET', 'Spring Boot', 'MSTest', 'JUnit', 'SQL Server', 'PostgreSQL', 'HTML/CSS/JS', 'Vue.js', 'React', 'Docker', 'Git'],
+      technologies: ['C#', 'Java', 'ASP.NET', 'Spring Boot', 'MSTest', 'JUnit', 'SQL Server', 'PostgreSQL', 'HTML/CSS/JS', 'React', 'Vue.js', 'CI/CD', 'Docker', 'Git'],
       links: [
         {
-          label: 'Tech Elevator APIs',
+          label: 'Express-based APIs',
           url: 'https://teapi.netlify.app/'
         }
       ]
     },
     {
-      title: 'Web Developer',
-      company: 'Bry\'s Marine',
+      title: 'Independent Developer',
+      company: "Bry's Marine",
       location: 'Remote',
       period: 'Oct 2019 - Dec 2019',
-      description: 'Modernized company website with more professional look and feel and product photos.',
+      description: "Redesigned and developed a new website for Bry's Marine, a boat dealership and service center, focusing on improved user experience and performance.",
       achievements: [
-        'Redesigned company website with lightweight CMS to improve SEO and user experience, resulting in 15% more sales over the previous year.'
+        'Rebuilt website with lightweight CMS, achieving 90+ Lighthouse scores in performance, best practices, and SEO.'
       ],
       technologies: ['Grav CMS', 'PHP/Twig', 'jQuery', 'HTML/CSS/JS', 'DreamHost', 'Cloudinary', 'Git'],
       links: [
@@ -51,26 +53,26 @@ const Experience = () => {
       company: 'Traffic Safety Store',
       location: 'Hybrid / Philadelphia, PA',
       period: 'Jul 2016 - Sep 2019',
-      description: 'Developed and maintained e-commerce websites and admin site for traffic safety products.',
+      description: 'Led development of e-commerce platform for traffic safety products, focusing on enhancing user experience, expanding product offerings, and improving operational efficiency.',
       achievements: [
-        'Co-led team of four in launching new e-commerce admin site using ASP.NET, Razor, and React, achieving goals of unified logins, access to online & phone orders, and quickly toggling on-sale/out-of-stock for products on all storefronts.',
-        'Deployed new responsive web design interface for signs with legend search using React, JavaScript, and ASP.NET, boosting sales of high-volume signs and enabling company to sell more than 200 new legends.',
-        'Enhanced product category layout with live search and filtering capabilities with JavaScript, Elasticsearch, and ASP.NET, increasing conversion rates by more than 30% over previous versions in A/B tests.',
-        'Delivered interactive sign designer using JavaScript and Cloudinary APIs, generating more than $30,000 of additional e-commerce sales and higher conversion rates compared to previous version in A/B tests.'
+        'Implemented new interface for road construction signs using ASP.NET and React, expanding the product catalog to 200+ new signs and generating $150k+ in additional annual revenue.',
+        'Built interactive custom sign builder with JavaScript and Cloudinary, driving $60k+ in new revenue within six months and significantly improving conversion rates in A/B tests.',
+        'Developed live search and filtering for safety vest products using JavaScript and Elasticsearch, increasing average order value by $500+ on safety vest purchases.',
+        'Led 3-person team to launch admin site with ASP.NET and React, unifying phone and online orders across 4 storefronts and enabling bulk product management for inventory, pricing, and promotions.'
       ],
-      technologies: ['ASP.NET (C# MVC)', 'SQL', 'React', 'jQuery', 'HTML/CSS/JS', 'Microsoft SQL Server', 'Elasticsearch', 'FluentMigrator', 'Git'],
+      technologies: ['ASP.NET', 'SQL', 'React', 'jQuery', 'HTML/CSS/JS', 'LESS', 'SQL Server', 'Elasticsearch', 'FluentMigrator', 'Git'],
       links: [
         {
-          label: 'Roll-up Signs',
+          label: 'Road Construction Signs',
           url: 'https://www.trafficsafetystore.com/traffic-signs/roll-up-48'
+        },
+        {
+          label: 'Custom Sign Builder',
+          url: 'https://www.trafficsafetystore.com/Product/Customization?ProductOptionID=4664'
         },
         {
           label: 'Safety Vests',
           url: 'https://www.trafficsafetystore.com/safety-vests'
-        },
-        {
-          label: 'Sign Designer',
-          url: 'https://www.trafficsafetystore.com/Product/Customization?ProductOptionID=4664'
         }
       ]
     },
@@ -79,12 +81,13 @@ const Experience = () => {
       company: 'Dechert LLP',
       location: 'Philadelphia, PA',
       period: 'Jan 2011 - Jul 2016',
-      description: 'Developed enterprise applications for law firm operations, focusing on document management and internal systems.',
+      description: 'Developed and maintained internal applications for a global law firm, focusing on automating processes, integrating third-party services, and enhancing document management systems to improve operational efficiency.',
       achievements: [
-        'Architected and developed ethical screen management system, automatically applying access lists to secure iManage digital documents and workspaces, saving application support and general counsel teams more than 20 hours/week.',
-        'Implemented dynamic internal skills & experience tracking application using ASP.NET, CSS, and Photoshop mockups, saving law firm over $25,000 annually by leveraging internal resources over external resources.'
+        'Architected and developed ASP.NET system to automate conflict-of-interest document restrictions in iManage document management platform, saving legal and IT teams 20+ hours per week.',
+        'Built searchable skills database using ASP.NET and JavaScript, enabling legal teams to find internal translators and subject matter experts and saving $25k+ annually in external consultant fees.',
+        'Integrated Okta and Box REST APIs to automate application provisioning and external document sharing, reducing manual work for Help Desk and IT Operations teams.'
       ],
-      technologies: ['ASP.NET (VB Web Forms, C# MVC)', 'SQL', 'HTML/CSS/JS', 'jQuery', 'Microsoft SQL Server', 'SSRS', 'SSIS', 'iManage', 'Git']
+      technologies: ['ASP.NET', 'SQL', 'HTML/CSS/JS', 'jQuery', 'SQL Server', 'SSRS', 'SSIS', 'iManage', 'Git']
     },
     {
       title: 'Associate Software Engineer',
@@ -92,9 +95,9 @@ const Experience = () => {
       location: 'Fort Washington, PA',
       period: 'Feb 2010 - Jan 2011',
       achievements: [
-        'Improved key systems of Contract Analysis department with enhancements to ASP.NET application and SQL databases, enabling more efficient data captur and boosting analyst productivity resulting in 20% reduction in daily backlog.'
+        'Enhanced ASP.NET and SQL applications for Contract Analysis department by expanding data capture and optimizing keyboard navigation, helping analysts process contracts more quickly and reducing daily backlog by 20%.'
       ],
-      technologies: ['ASP.NET (VB Web Forms)', 'VB.NET WinForms', 'SQL', 'HTML/CSS/JS', 'Microsoft SQL Server']
+      technologies: ['ASP.NET', 'WinForms', 'SQL', 'HTML/CSS/JS', 'SQL Server']
     },
     {
       title: 'Applications Developer',
@@ -102,9 +105,9 @@ const Experience = () => {
       location: 'Horsham, PA',
       period: 'Jan 2007 - Feb 2010',
       achievements: [
-        'Upgraded major finance applications to ASP.NET 2.0 and SQL Server 2008, implementing new features from business requirements and integrating with iManage document management systems.'
+        'Migrated mission-critical data transfer process from legacy Perl script to a .NET Windows Service, improving reliability and reducing manual reruns by 80%.'
       ],
-      technologies: ['ASP.NET (VB Web Forms)', 'HTML/CSS/JS', 'SQL', 'Microsoft SQL Server', 'iManage']
+      technologies: ['ASP.NET', 'HTML/CSS/JS', 'SQL', 'SQL Server', 'iManage']
     },
     {
       title: '.NET Developer',
@@ -114,7 +117,7 @@ const Experience = () => {
       achievements: [
         'Created ASP.NET web applications demonstrating and sharing knowledge for hospitality management professionals, leading to better information sharing among remote users.'
       ],
-      technologies: ['ASP.NET (VB Web Forms)', 'Classic ASP', 'HTML', 'SQL', 'Microsoft SQL Server']
+      technologies: ['ASP.NET', 'Classic ASP', 'HTML', 'SQL', 'SQL Server']
     }
   ]
 
