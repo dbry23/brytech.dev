@@ -9,10 +9,10 @@ const Experience = () => {
   const yearsOfExperience = useContext(YearsExperienceContext)
   const experiences = [
     {
-      title: 'Software Engineer & Curriculum Developer ',
+      title: 'Software Engineer & Curriculum Developer',
       company: 'Tech Elevator',
       location: 'Remote',
-      period: 'Jan 2020 - Present',
+      period: 'Jan 2020 - Dec 2025',
       description: 'Develop and maintain curriculum and software solutions for a coding bootcamp, focusing on backend development, DevOps, and automated testing to enhance student learning outcomes.',
       achievements: [
         'Architected API and database capstone project modeled after Venmo, in dual tech stacks (C#/ASP.NET/SQL Server and Java/Spring/PostgreSQL), driving improved engagement and module completion rates for 2,000+ learners.',
