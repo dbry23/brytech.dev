@@ -161,7 +161,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📞 Contact
 
-David Bry - [dave@brytech.dev](mailto:dave@brytech.dev)
+Dave Bry - [dave@brytech.dev](mailto:dave@brytech.dev)
 
 Project Link: [https://github.com/dbry23/brytech.dev](https://github.com/dbry23/brytech.dev)
 
