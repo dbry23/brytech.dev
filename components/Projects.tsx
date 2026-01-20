@@ -7,11 +7,11 @@ const Projects = () => {
   const projects = [
     {
       title: 'Pick For Me TV',
-      description: 'Built random TV episode picker using Vue.js, Express, and TMDB API to recreate the experience of stumbling onto favorite shows while channel surfing.',
+      description: 'Created random TV episode picker using TypeScript, Next.js, and TMDB API integration to recreate the experience of stumbling onto your favorite shows while channel surfing.',
       image: '/projects/pick-for-me-tv.gif',
-      technologies: ['Vue.js', 'Express', 'REST API', 'TMDB'],
+      technologies: ['TypeScript', 'Next.js', 'React', 'REST API', 'Tailwind CSS', 'TMDB', 'Vercel'],
       liveUrl: 'https://pickforme.tv',
-      repoUrl: null,
+      repoUrl: 'https://github.com/dbry23/pickforme.tv',
       featured: true
     },
     {
