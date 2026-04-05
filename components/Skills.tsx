@@ -16,7 +16,7 @@ const Skills = () => {
         { name: 'HTML5', level: 90 },
         { name: 'CSS3', level: 85 },
         { name: 'Java', level: 85 },
-        { name: 'TypeScript', level: 80 },
+        { name: 'TypeScript', level: 85 },
       ]
     },
     {
@@ -25,7 +25,7 @@ const Skills = () => {
         { name: 'ASP.NET', level: 95 },
         { name: 'React', level: 90 },
         { name: 'Spring Boot', level: 85 },
-        { name: 'Express', level: 85 },
+        { name: 'Next.js', level: 85 },
         { name: 'Vue.js', level: 85 },
         { name: 'Razor', level: 80 },
         { name: 'Entity Framework', level: 85 },

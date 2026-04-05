@@ -7,45 +7,61 @@ const Projects = () => {
   const projects = [
     {
       title: 'Pick For Me TV',
-      description: 'Created random TV episode picker using TypeScript, Next.js, and TMDB API integration to recreate the experience of stumbling onto your favorite shows while channel surfing.',
+      description: 'Random TV episode picker using TMDB API to recreate the channel surfing experience',
       image: '/projects/pick-for-me-tv.gif',
-      technologies: ['TypeScript', 'Next.js', 'React', 'REST API', 'Tailwind CSS', 'TMDB', 'Vercel'],
+      technologies: ['TypeScript', 'Next.js', 'React', 'REST API', 'Tailwind CSS', 'shadcn/ui', 'TMDB', 'Vercel'],
       liveUrl: 'https://pickforme.tv',
       repoUrl: 'https://github.com/dbry23/pickforme.tv',
       featured: true
     },
     {
       title: 'BryTech',
-      description: 'Built modern portfolio site using Cursor AI, Next.js/Tailwind CSS, and Vercel deployments, learning AI-assisted development workflows and TypeScript through iterative prompting and code review.',
+      description: 'Personal portfolio site created using Cursor AI',
       image: '/projects/brytech.gif',
-      technologies: ['Cursor AI', 'AI-assisted', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vercel', 'Cursor AI'],
       liveUrl: 'https://www.brytech.dev',
       repoUrl: 'https://github.com/dbry23/brytech.dev',
       featured: true
     },
     {
-      title: "Bry's Marine website",
-      description: 'Rebuilt website with lightweight CMS, achieving 90+ Lighthouse scores in performance, best practices, and SEO.',
-      image: '/projects/brys-marine.png',
-      technologies: ['Grav CMS', 'PHP/Twig', 'jQuery', 'HTML/CSS/JS', 'DreamHost', 'Cloudinary'],
-      liveUrl: 'https://www.brysmarine.com',
-      repoUrl: null,
+      title: 'Batch Diffusion',
+      description: 'CLI tool for unattended batch image generation via a locally-running AUTOMATIC1111 Stable Diffusion API',
+      image: '/projects/batch-diffusion.png',
+      technologies: ['Python', 'Claude', 'REST API'],
+      repoUrl: 'https://github.com/dbry23/batch-diffusion',
       featured: true
     },
     {
-      title: 'Traffic Safety Store - Construction Signs Gallery',
-      description: 'Implemented new interface for road construction signs using ASP.NET and React, expanding the product catalog to 200+ new signs and generating $150k+ in additional annual revenue.',
+      title: 'Cull Diffusion',
+      description: 'Local web app for culling AI-generated images',
+      image: '/projects/cull-diffusion.png',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+      repoUrl: 'https://github.com/dbry23/cull-diffusion',
+      featured: true
+    },
+    // {
+    //   title: "Bry's Marine website",
+    //   description: 'Company website on lightweight CMS',
+    //   image: '/projects/brys-marine.png',
+    //   technologies: ['Grav CMS', 'PHP/Twig', 'jQuery', 'DreamHost', 'Cloudinary'],
+    //   liveUrl: 'https://www.brysmarine.com',
+    //   repoUrl: null,
+    //   featured: false
+    // },
+    {
+      title: 'Construction Signs Gallery',
+      description: 'Live-filtering React interface to search 200+ road construction sign legends',
       image: '/projects/traffic-safety-store-sign-gallery.gif',
-      technologies: ['ASP.NET', 'React', 'HTML/CSS/JS', 'Entity Framework'],
+      technologies: ['ASP.NET', 'React', 'Entity Framework'],
       liveUrl: 'https://www.trafficsafetystore.com/traffic-signs/roll-up-48',
       repoUrl: null,
       featured: false
     },
     {
-      title: 'Traffic Safety Store - Custom Sign Builder',
-      description: 'Built interactive custom sign builder with JavaScript and Cloudinary, driving $60k+ in new revenue within six months and significantly improving conversion rates in A/B tests.',
+      title: 'Custom Sign Configurator',
+      description: 'Custom sign configurator with live preview and near real-time rendering',
       image: '/projects/traffic-safety-store-sign-customization.gif',
-      technologies: ['ASP.NET', 'jQuery', 'HTML/CSS/JS', 'Cloudinary'],
+      technologies: ['ASP.NET', 'jQuery', 'Cloudinary'],
       liveUrl: 'https://www.trafficsafetystore.com/product/customization?productoptionid=4625',
       repoUrl: null,
       featured: false

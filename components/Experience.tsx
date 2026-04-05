@@ -9,19 +9,19 @@ const Experience = () => {
   const yearsOfExperience = useContext(YearsExperienceContext)
   const experiences = [
     {
-      title: 'Software Engineer & Curriculum Developer',
+      title: 'Senior Software Engineer & Curriculum Developer',
       company: 'Tech Elevator',
       location: 'Remote',
       period: 'Jan 2020 - Dec 2025',
-      description: 'Develop and maintain curriculum and software solutions for a coding bootcamp, focusing on backend development, DevOps, and automated testing to enhance student learning outcomes.',
+      description: 'Develop and maintain curriculum and software solutions for a coding bootcamp, focusing on fullstack development, DevOps, and automated testing to enhance student learning outcomes.',
       achievements: [
-        'Architected API and database capstone project modeled after Venmo, in dual tech stacks (C#/ASP.NET/SQL Server and Java/Spring/PostgreSQL), driving improved engagement and module completion rates for 2,000+ learners.',
-        'Designed automated CI/CD pipelines and curriculum versioning system that reduced deployment time from 3 days to 3 hours, enabling rapid curriculum iteration for 800+ concurrent students across multiple programs and start dates.',
-        'Built AI-assisted pipeline to generate and validate Check-For-Understanding questions, compressing an 8-month timeline to under 3 months while identifying and correcting errors in existing curriculum materials.',
-        'Engineered automated testing and scoring pipelines using custom Docker images and multiple testing frameworks, reducing per-instructor grading workload by 15+ hours per week and enabling more direct student support.',
-        'Implemented scalable Express-based APIs as teaching resources for lab exercises, giving learners hands-on experience consuming REST endpoints and working with distributed systems.',
-        'Developed React and ES6 curriculum modules to replace legacy Vue content, ensuring students learned modern industry-standard technologies.',
-        'Mentored junior developers through training, pair programming, and constructive code reviews, helping them build confidence and level up their skills.'
+        'Delivered 8-month project in 3 months by designing an AI-assisted workflow to streamline generation and validation of curriculum assessment questions',
+        'Automated curriculum deployments with custom CI/CD pipelines, reducing release time from 3 days to 3 hours and supporting 500+ students across 4-5 concurrent cohorts',
+        'Developed automated exercise scoring pipelines using custom Docker images with MSTest, JUnit, Cypress, Mocha, and Vitest, eliminating manual grading across 4 weekly exercises and freeing instructors for direct student support',
+        'Architected REST APIs and database schemas for knowledge assessment projects in C# and Java stacks (ASP.NET/SQL Server and Spring/PostgreSQL), used by 20+ cohorts and 2,000+ learners',
+        'Rewrote SPA curriculum from Vue to React with modern ES6/JSX patterns, aligning with industry adoption trends and improving graduate employability',
+        'Built Node.js APIs as Netlify serverless functions for real-world lab exercises, giving learners hands-on experience consuming non-local REST endpoints',
+        'Mentored 4+ junior developers through pair programming and code reviews, providing architectural guidance and reinforcing engineering best practices'
       ],
       technologies: ['C#', 'Java', 'ASP.NET', 'Spring Boot', 'MSTest', 'JUnit', 'SQL Server', 'PostgreSQL', 'HTML/CSS/JS', 'React', 'Vue.js', 'CI/CD', 'Docker', 'Git'],
       links: [
@@ -49,16 +49,18 @@ const Experience = () => {
       ]
     },
     {
-      title: 'Lead Software Engineer / Software Engineer',
+      title: 'Lead Software Engineer',
       company: 'Traffic Safety Store',
-      location: 'Hybrid / Philadelphia, PA',
+      location: 'Philadelphia, PA / Remote',
       period: 'Jul 2016 - Sep 2019',
       description: 'Led development of e-commerce platform for traffic safety products, focusing on enhancing user experience, expanding product offerings, and improving operational efficiency.',
       achievements: [
-        'Implemented new interface for road construction signs using ASP.NET and React, expanding the product catalog to 200+ new signs and generating $150k+ in additional annual revenue.',
-        'Built interactive custom sign builder with JavaScript and Cloudinary, driving $60k+ in new revenue within six months and significantly improving conversion rates in A/B tests.',
-        'Developed live search and filtering for safety vest products using JavaScript and Elasticsearch, increasing average order value by $500+ on safety vest purchases.',
-        'Led 3-person team to launch admin site with ASP.NET and React, unifying phone and online orders across 4 storefronts and enabling bulk product management for inventory, pricing, and promotions.'
+        'Led 3-person team to unify product and order management across 5 data sources and 4 storefronts into a single admin platform, making common management tasks 5-10x faster',
+        'Replaced insecure homegrown authentication with role-based access control using Microsoft Identity and implemented audit trails on data changes, hardening security and data integrity across all storefronts',
+        'Increased annual revenue $150k+ by replacing a static 30-item product grid with a live-filtering React interface, enabling customers to search 200+ road construction sign legends',
+        'Developed Elasticsearch-powered live filtering of safety vest inventory by size, color, and ANSI safety rating, increasing conversion rates from 17% to 23% as validated through A/B testing',
+        'Drove $60k+ in new sales within six months by building a custom sign configurator with live preview and near real-time rendering using JavaScript and Cloudinary API',
+        'Integrated Avalara sales tax API to replace incomplete state-only tax calculations with accurate local and county rates, eliminating recurring manual corrections and automating the exemption approval process'
       ],
       technologies: ['ASP.NET', 'SQL', 'React', 'jQuery', 'HTML/CSS/JS', 'LESS', 'SQL Server', 'Elasticsearch', 'FluentMigrator', 'Git'],
       links: [
@@ -77,15 +79,17 @@ const Experience = () => {
       ]
     },
     {
-      title: 'IT Applications Developer',
+      title: 'Software Engineer',
       company: 'Dechert LLP',
       location: 'Philadelphia, PA',
       period: 'Jan 2011 - Jul 2016',
       description: 'Developed and maintained internal applications for a global law firm, focusing on automating processes, integrating third-party services, and enhancing document management systems to improve operational efficiency.',
       achievements: [
-        'Architected and developed ASP.NET system to automate conflict-of-interest document restrictions in iManage document management platform, saving legal and IT teams 20+ hours per week.',
-        'Built searchable skills database using ASP.NET and JavaScript, enabling legal teams to find internal translators and subject matter experts and saving $25k+ annually in external consultant fees.',
-        'Integrated Okta and Box REST APIs to automate application provisioning and external document sharing, reducing manual work for Help Desk and IT Operations teams.'
+        "Architected ASP.NET/SQL Server system to automate conflict-of-interest document restrictions in iManage across the firm's distributed global infrastructure, saving legal and IT teams 20+ hours per week",
+        'Saved firm $25k+ annually by building a searchable internal skills database that reduced reliance on costly consultants',
+        'Integrated Okta REST API with internal systems to automate app provisioning, eliminating manual IT steps for employee onboarding and access requests',
+        "Integrated Box REST API with iManage to enable secure external document sharing, extending collaboration capabilities beyond the firm's internal platform",
+        'Reverse engineered legacy ASP.NET applications and MSSQL stored procedures from defunct vendors to resolve critical issues including DST handling failures and Windows/IE compatibility problems, ensuring business continuity'
       ],
       technologies: ['ASP.NET', 'SQL', 'HTML/CSS/JS', 'jQuery', 'SQL Server', 'SSRS', 'SSIS', 'iManage', 'Git']
     },
@@ -95,27 +99,30 @@ const Experience = () => {
       location: 'Fort Washington, PA',
       period: 'Feb 2010 - Jan 2011',
       achievements: [
-        'Enhanced ASP.NET and SQL applications for Contract Analysis department by expanding data capture and optimizing keyboard navigation, helping analysts process contracts more quickly and reducing daily backlog by 20%.'
+        'Enhanced ASP.NET and SQL applications for Contract Analysis department by expanding data capture and optimizing keyboard navigation, enabling analysts to process contracts faster and reducing daily backlog by 20%',
+        'Designed policy review application with approval workflow and audit trail, reducing errors and re-reviews for the 5-6 person review team',
+        'Developed internal project management tool for the engineering department, automating deployment plan generation and replacing an error-prone manual process'
       ],
       technologies: ['ASP.NET', 'WinForms', 'SQL', 'HTML/CSS/JS', 'SQL Server']
     },
     {
-      title: 'Applications Developer',
-      company: 'Capmark Financial Group, Inc.',
+      title: 'Junior Software Engineer',
+      company: 'Capmark Financial Group',
       location: 'Horsham, PA',
       period: 'Jan 2007 - Feb 2010',
       achievements: [
-        'Migrated mission-critical data transfer process from legacy Perl script to a .NET Windows Service, improving reliability and reducing manual reruns by 80%.'
+        'Rebuilt mission-critical data transfer process from legacy Perl script to a .NET Windows Service, improving reliability and reducing manual reruns by 80%',
+        'Upgraded major finance applications to ASP.NET 2.0 and SQL Server 2008, implementing new business features, stored procedures, and tighter integration with iManage document management systems'
       ],
       technologies: ['ASP.NET', 'HTML/CSS/JS', 'SQL', 'SQL Server', 'iManage']
     },
     {
-      title: '.NET Developer',
+      title: 'Student Software Engineer',
       company: 'School of Tourism & Hospitality Management, Temple University',
       location: 'Philadelphia, PA',
       period: 'Jun 2006 - Jan 2007',
       achievements: [
-        'Created ASP.NET web applications demonstrating and sharing knowledge for hospitality management professionals, leading to better information sharing among remote users.'
+        'Migrated Classic ASP web applications to ASP.NET 1.1 for the hospitality management department, serving faculty and industry professionals'
       ],
       technologies: ['ASP.NET', 'Classic ASP', 'HTML', 'SQL', 'SQL Server']
     }
